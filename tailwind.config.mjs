@@ -74,6 +74,7 @@ export default {
           }
         },
         animation: {
+            grid: "grid 15s linear infinite",
           drawLine: 'drawLine 1.5s ease-out forwards',
         slideInLeft: 'slideInLeft 1s ease-out forwards 1.2s',
         slideInRight: 'slideInRight 1s ease-out forwards 1.2s',
@@ -94,6 +95,10 @@ export default {
           slideInFromLeft: 'slideInFromLeft 1s ease-in-out'
         },
         keyframes: {
+          grid: {
+            "0%": { transform: "translateY(-50%)" },
+            "100%": { transform: "translateY(0)" },
+          },
           drawLine: {
             '0%': { height: '0%' },
             '100%': { height: '60%' },

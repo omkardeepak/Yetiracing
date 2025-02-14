@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import AnimatedGrid from "../components/grid";
 export default function Subsystem(){
 
 
@@ -32,15 +33,19 @@ export default function Subsystem(){
 </div>
   );
 
+  
 
     return(
       <div>
         <Navbar></Navbar>
         
-        <div className="min-h-screen w-full bg-gradient-to-b from-black to-red-700 pt-20 ">
-        <div className="h-72 w-full text-white font-zenDots text-5xl pt-16 md:pt-0 items-center justify-center md:flex p-3">Executive Committe <span className="text-red-700 ">[</span>24-25<span className="text-red-700">]</span></div>
+        <div className="min-h-screen w-full bg-gradient-to-b from-black to-red-700 pt-20 z-0 ">
+        <div className="-mt-32 z-0 flex items-start fixed inset-0 h-full w-full" >
+        <AnimatedGrid className="custom-class-for-grid " />
+        </div>
+        <div className="relative z-20 h-72 w-full text-white font-zenDots text-5xl pt-16 md:pt-0 items-center justify-center md:flex p-3">Executive Committee <span className="text-red-700 ">[</span>24-25<span className="text-red-700">]</span></div>
 
-        <div className=" flex flex-row justify-center w-full space-x-2 md:space-x-14  mb-16">
+        <div className="relative z-20 flex flex-row justify-center w-full space-x-2 md:space-x-14  mb-16">
             <div className="w-64 flex justify-center h-64">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
   <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48 " src="https://ik.imagekit.io/r70knk9pu/asif.jpg?updatedAt=1739005570560" alt=""></img>
@@ -71,7 +76,7 @@ export default function Subsystem(){
 
 
 </div>
-        <div className=" col-span-full grid grid-cols-2 md:grid-cols-3 gap-0 md:gap-8 mb-3">
+        <div className="relative z-20 col-span-full grid grid-cols-2 md:grid-cols-3 gap-0 md:gap-8 mb-3">
               <div className="col-span-2 md:col-span-5 place-items-center">
                 {/* Two-column grid for mobile, three-column for desktop */}
                 <div className="grid grid-cols-2 md:grid-cols-3 md:gap-24 gap-y-12 place-items-center">
@@ -81,7 +86,7 @@ export default function Subsystem(){
                 </div>
               </div>
               </div>
-              <div className="flex flex-col w-full h-full space-y-12 mt-12 ">
+              <div className=" relative z-20 flex flex-col w-full h-full space-y-12 mt-12 ">
               <div className=" flex flex-row justify-center w-full space-x-0 md:space-x-16 mb-6">
             <div className="w-64 flex justify-center h-64">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
@@ -184,7 +189,7 @@ export default function Subsystem(){
 
 
 
-<div className="w-full flex justify-center h-52 mt-7 items-center">
+<div className="relative  z-20 w-full flex justify-center h-52 mt-7 items-center">
 <div className="h-24 flex -space-x-32 hover:scale-110 -space-y-5 w-48 justify-center items-center">
   
 <a><div className="w-36 pb-2 h-16  items-center justify-center flex border-2 text-white font-Goldman font-thin">
@@ -195,8 +200,9 @@ export default function Subsystem(){
 </div>
 </div>
 </div>
-
+<div className="z-30 relative">
 <Footer></Footer>
+</div>
 </div>
 
     )

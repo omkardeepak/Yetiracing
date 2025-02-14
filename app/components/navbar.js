@@ -25,7 +25,7 @@ return(
   <div className="hidden sm:block">
 
   {/* Navigation Links */}
-  <div className="flex items-center text-xl space-x-9 text-white font-Orbitron justify-center mr-10">
+  <div className="flex items-center text-lg space-x-9 text-white font-Orbitron justify-center mr-10">
     <a className="hover:scale-110" href="/subsystem">Team</a>
     <a className="hover:scale-110" href="/gallery">Gallery</a>
     <a className="hover:scale-110" href="/gallery#media">Media</a>
