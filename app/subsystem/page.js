@@ -6,15 +6,15 @@ export default function Subsystem(){
 
   const teamMembers = [
 
-    { name: "Govind E S", role: "Manager " , img:"/assets/govind.jpg" },
-    { name: "Devan P Das", role: "Manager ", img:"https://ik.imagekit.io/r70knk9pu/devan.jpg?updatedAt=1739005570408" },
-    { name: "Ashwin S", role: "Powertrain" , img:"https://ik.imagekit.io/r70knk9pu/ashwins.jpg?updatedAt=1739005570483"},
-    { name: "Vivek H", role: "Steering", img:"https://ik.imagekit.io/r70knk9pu/vivek.jpg?updatedAt=1739005570491" },
-    { name: "Saif Ali K N", role: "Rollcage", img:"https://ik.imagekit.io/r70knk9pu/saif.jpg?updatedAt=1739005570547" },
-    { name: "Aswin A", role: "Suspension" , img:"/assets/devan"},
-    { name: "Govind E S", role: "Brake" , img:"/assets/devan"},
-    { name: "Lena Alingal", role: "Statics", img:"/assets/devan" },
-    { name: "Vishnu M Krishnan", role: "Media", img:"https://ik.imagekit.io/r70knk9pu/vishnu.jpg?updatedAt=1739005570487" },
+    { name: "Govind E S", role: "Manager " , img:"/assets/govind.jpg",linkedin:"" },
+    { name: "Devan P Das", role: "Manager ", img:"https://ik.imagekit.io/r70knk9pu/devan.jpg?updatedAt=1739005570408",linkedin:"https://www.linkedin.com/in/devanpdas" },
+    { name: "Ashwin S", role: "Powertrain" , img:"https://ik.imagekit.io/r70knk9pu/ashwins.jpg?updatedAt=1739005570483",linkedin:"https://www.linkedin.com/in/ashwin-s-595a81319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
+    { name: "Vivek H", role: "Steering", img:"https://ik.imagekit.io/r70knk9pu/vivek.jpg?updatedAt=1739005570491",linkedin:"https://www.linkedin.com/in/vivek-h-28aa26339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
+    { name: "Saif Ali K N", role: "Rollcage", img:"https://ik.imagekit.io/r70knk9pu/saif.jpg?updatedAt=1739005570547",linkedin:"https://www.linkedin.com/in/saif-ali-a24740244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Aswin A", role: "Suspension" , img:"/assets/devan",linkedin:"https://www.linkedin.com/in/aswin-a-3a87a7247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
+    { name: "Govind E S", role: "Brake" , img:"/assets/devan",linkedin:""},
+    { name: "Lena Alingal", role: "Statics", img:"/assets/devan",linkedin:"" },
+    { name: "Vishnu M Krishnan", role: "Media", img:"https://ik.imagekit.io/r70knk9pu/vishnu.jpg?updatedAt=1739005570487",linkedin:"https://www.linkedin.com/in/vishnumkrishnan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
   ];
 
   const Profile = ({ teamMember }) => (
@@ -25,7 +25,7 @@ export default function Subsystem(){
   <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
   <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
     {teamMember.role}</h2>
-    <a href="" target="_blank"
+    <a href={teamMember.linkedin} target="_blank"
       class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
 <img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
 </div>
@@ -67,7 +67,7 @@ export default function Subsystem(){
   <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
   <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
     Vice Captain</h2>
-    <a href="" target="_blank"
+    <a href="https://www.linkedin.com/in/abhijith-mohan-642205306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"
       class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
 <img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
 </div>

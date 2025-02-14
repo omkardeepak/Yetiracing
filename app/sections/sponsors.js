@@ -63,6 +63,9 @@ export default function Sponsor(){
 </div>
 <hr className=" bg-red-800"></hr>
 <div className="w-full overflow-hidden">
+{/* <div class="absolute z-50 inset-y-0  w-60  bg-gradient-to-r from-neutral-900 via-transparent to-transparent opacity-30"></div>
+<div class="absolute z-50 inset-y-0  w-60  bg-gradient-to-r from-neutral-900 via-transparent to-transparent opacity-30"></div> */}
+
   <ul className="flex items-center justify-center space-x-11 min-w-max animate-infinite-scrolll hover:animate-none h-24 ">
     <li>
       <img src={helloscore} height="60" width="180" alt="helloscore" />
