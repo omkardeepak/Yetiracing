@@ -6,14 +6,14 @@ export default function Subsystem(){
 
   const teamMembers = [
 
-    { name: "Govind E S", role: "Manager " , img:"/assets/govind.jpg",linkedin:"" },
+    { name: "Govind E S", role: "Manager " , img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:"" },
     { name: "Devan P Das", role: "Manager ", img:"https://ik.imagekit.io/r70knk9pu/devan.jpg?updatedAt=1739005570408",linkedin:"https://www.linkedin.com/in/devanpdas" },
     { name: "Ashwin S", role: "Powertrain" , img:"https://ik.imagekit.io/r70knk9pu/ashwins.jpg?updatedAt=1739005570483",linkedin:"https://www.linkedin.com/in/ashwin-s-595a81319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
     { name: "Vivek H", role: "Steering", img:"https://ik.imagekit.io/r70knk9pu/vivek.jpg?updatedAt=1739005570491",linkedin:"https://www.linkedin.com/in/vivek-h-28aa26339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
     { name: "Saif Ali K N", role: "Rollcage", img:"https://ik.imagekit.io/r70knk9pu/saif.jpg?updatedAt=1739005570547",linkedin:"https://www.linkedin.com/in/saif-ali-a24740244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { name: "Aswin A", role: "Suspension" , img:"/assets/devan",linkedin:"https://www.linkedin.com/in/aswin-a-3a87a7247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
-    { name: "Govind E S", role: "Brake" , img:"/assets/devan",linkedin:""},
-    { name: "Lena Alingal", role: "Statics", img:"/assets/devan",linkedin:"" },
+    { name: "Govind E S", role: "Brake" , img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:""},
+    { name: "Lena Alingal", role: "Statics", img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:"" },
     { name: "Vishnu M Krishnan", role: "Media", img:"https://ik.imagekit.io/r70knk9pu/vishnu.jpg?updatedAt=1739005570487",linkedin:"https://www.linkedin.com/in/vishnumkrishnan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
   ];
 
@@ -33,7 +33,7 @@ export default function Subsystem(){
 </div>
   );
 
-  
+
 
     return(
       <div>
@@ -90,7 +90,7 @@ export default function Subsystem(){
               <div className=" flex flex-row justify-center w-full space-x-0 md:space-x-16 mb-6">
             <div className="w-64 flex justify-center h-64">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
-  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwyfHxoZWFkc2hvdHxlbnwwfDB8fHwxNjk1ODE3MjEzfDA&ixlib=rb-4.0.3&q=80&w=1080" alt=""></img>
+  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png" alt=""></img>
   <h1 class="text-xl md:text-2xl text-gray-100 font-Fn mt-2">Pavna Suresh
   </h1>
   <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
@@ -105,7 +105,7 @@ export default function Subsystem(){
 
 <div className="w-64 flex justify-center h-64">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
-  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwyfHxoZWFkc2hvdHxlbnwwfDB8fHwxNjk1ODE3MjEzfDA&ixlib=rb-4.0.3&q=80&w=1080" alt=""></img>
+  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png" alt=""></img>
   <h1 class="text-xl md:text-2xl text-gray-100 font-Fn mt-2">Rohan Kalathil </h1>
   <div className=" flex flex-col md:flex-row  w-full justify-center items-center space-x-2">
   <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">

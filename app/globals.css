@@ -174,11 +174,11 @@ img {
   perspective: 1000px;
 }
 
-@keyframes verticalSpin {
+@keyframes horizontalSpin {
   from {
-    transform: rotateX(0deg);
+    transform: rotateY(-90deg);
   }
   to {
-    transform: rotateX(360deg);
+    transform: rotateY(90deg);
   }
 }
