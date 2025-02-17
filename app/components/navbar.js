@@ -28,7 +28,7 @@ return(
   <div className="flex items-center text-lg space-x-9 text-white font-Orbitron justify-center mr-10">
     <a className="hover:scale-110" href="/subsystem">Team</a>
     <a className="hover:scale-110" href="/gallery">Gallery</a>
-    <a className="hover:scale-110" href="/gallery#media">Media</a>
+    <a className="hover:scale-110" href="/gallery#media">News</a>
     <a className="hover:scale-110" href="/team">About us</a>
     <a className="hover:scale-110" href="/sponsors">Sponsors</a>
     <a className="hover:scale-110" href="#footer">Contact us</a>

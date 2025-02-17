@@ -195,7 +195,7 @@ const Gallery = () => {
       <div className="w-full min-h-screen p-4 bg-gradient-to-b from-red-950 via-red-1000 to-black">
   <div className="max-w-6xl mx-auto">
     <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
-      FORMULA BHARAT'25
+      FORMULA BHARAT <span className="text-red-600">'</span>25
     </h1>
 
     <div className="flex flex-col lg:flex-row gap-6 items-center justify-start">

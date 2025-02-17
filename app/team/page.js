@@ -82,21 +82,21 @@ export default function TeamPage() {
       <div className="min-h-screen bg-gradient-to-b from-black via-black to-neutral-800 pb-9 pt-28">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 pt-16">
           <h1 className="text-center mb-8 lg:mb-12">
-            <span className="text-4xl lg:text-7xl font-zenDots bg-gradient-to-r from-red-700 via-red-700 to-red-700 text-transparent bg-clip-text flex justify-center animate-bounce">
-              ABOUT US
+            <span className="text-4xl lg:text-7xl font-zenDots text-neutral-50  flex justify-center animate-bounce">
+              ABOUT<span className="text-red-600 ml-3 font-bold font-zenDots"> US</span>
+
             </span>
           </h1>
           
           <div className="grid grid-cols-12 gap-4 md:gap-8 justify-center">
             <div className="col-span-12 md:col-start-2 md:col-span-10 mb-8 md:mb-20">
               <p className="text-gray-300 md:text-2xl text-lg text-justify font-Rajdhani mb-10">
-              Founded in 2016, Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT). Comprising 50 passionate and skilled members, we are driven by a shared commitment to engineering excellence and innovation. Our team designs and builds high-performance race cars to compete in prestigious motorsport events such as 
-                 <span className='font-semibold'>FORMULA BHARAT, SAE SUPRA, FORMULA IMPERIAL and FFS INDIA.</span><br></br><br></br>
+              Founded in 2016, Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT). Comprising 50 passionate and skilled members, we are driven by a shared commitment to engineering excellence and innovation. Our team designs and builds high-performance race cars to compete in prestigious motorsport events such as <span className='font-semibold'>FORMULA BHARAT, SAE SUPRA, FORMULA IMPERIAL and FFS INDIA.</span><br></br><br></br>
                  At Formula Bharat 2025, held at Kari Motor Speedway, Coimbatore, Yeti Racing made history by becoming the first team from Kerala to win the championship title in the combustion category - a landmark achievement that underscores our dedication, technical expertise, and perseverance. The team secured overall rank 1 in endurance, efficiency, and dynamics.  
               </p> 
               <p className="text-gray-300 md:text-2xl font-Rajdhani text-justify">
-                    Looking ahead, Yeti Racing is gearing up for exciting challenges at Formula Bharat 2025 and Formula Imperial
-                    2025, with aspirations to push the boundaries of design and performance even further.
+                    Looking ahead, Yeti Racing is gearing up for exciting challenges at Formula Imperial
+                    2025 and Formula Bharat 2026 with aspirations to push the boundaries of design and performance even further.
                   </p> <br></br>
                   <p className="text-gray-300 md:text-2xl font-Rajdhani text-justify mb-10">
                    

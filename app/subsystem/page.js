@@ -11,9 +11,9 @@ export default function Subsystem(){
     { name: "Ashwin S", role: "Powertrain" , img:"https://ik.imagekit.io/r70knk9pu/ashwins.jpg?updatedAt=1739005570483",linkedin:"https://www.linkedin.com/in/ashwin-s-595a81319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
     { name: "Vivek H", role: "Steering", img:"https://ik.imagekit.io/r70knk9pu/vivek.jpg?updatedAt=1739005570491",linkedin:"https://www.linkedin.com/in/vivek-h-28aa26339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
     { name: "Saif Ali K N", role: "Rollcage", img:"https://ik.imagekit.io/r70knk9pu/saif.jpg?updatedAt=1739005570547",linkedin:"https://www.linkedin.com/in/saif-ali-a24740244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { name: "Aswin A", role: "Suspension" , img:"/assets/devan",linkedin:"https://www.linkedin.com/in/aswin-a-3a87a7247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
+    { name: "Aswin A", role: "Suspension" , img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:"https://www.linkedin.com/in/aswin-a-3a87a7247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
     { name: "Govind E S", role: "Brake" , img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:""},
-    { name: "Lena Alingal", role: "Statics", img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:"" },
+    { name: "Lena Alingal", role: "Statics", img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:"https://www.linkedin.com/in/lena-alingal-788751229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " },
     { name: "Vishnu M Krishnan", role: "Media", img:"https://ik.imagekit.io/r70knk9pu/vishnu.jpg?updatedAt=1739005570487",linkedin:"https://www.linkedin.com/in/vishnumkrishnan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
   ];
 
@@ -43,7 +43,39 @@ export default function Subsystem(){
         <div className="-mt-32 z-0 flex items-start fixed inset-0 h-full w-full" >
         <AnimatedGrid className="custom-class-for-grid " />
         </div>
-        <div className="relative z-20 h-72 w-full text-white font-zenDots text-5xl pt-16 md:pt-0 items-center justify-center md:flex p-3">Executive Committee <span className="text-red-700 ">[</span>24-25<span className="text-red-700">]</span></div>
+        <div className="relative z-20 h-60 -mb-16 w-full text-white font-zenDots text-5xl pt-16 md:pt-0 items-center justify-center md:flex p-3 ">Executive Committee <span className="text-red-700 ">[</span>24-25<span className="text-red-700">]</span></div>
+
+        {/* advisor */} 
+<div className="w-full md:h-28  h- mt-16 md:mt-2 mb-7 flex justify-center items-center font-Orbitron text-3xl p-3 md:text-4xl text-white">Guiding us beyond the finish line.</div>
+<div className=" flex mb-16 flex-row justify-center w-full space-x-0 md:space-x-32">
+            <div className="w-64 flex justify-center h-64">
+            <header class=" absolute flex flex-col justify-center  items-center text-center">
+  <img class="inline-flex object-contain border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-white text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-08%20at%2020.28.26_a22c52b6.jpg?updatedAt=1739794940348" alt=""></img>
+  <h1 class="text-xl  md:text-2xl text-gray-100 font-Fn mt-2">Dr Biju N</h1>
+  <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
+  <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
+  Faculty Advisor </h2>
+    <a href="https://www.linkedin.com/in/biju-n-4287a9a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank"
+      class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
+<img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
+</div>
+</header>
+</div>
+
+<div className="w-64 flex justify-center h-64">
+            <header class=" absolute flex flex-col justify-center  items-center text-center">
+  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/Priyadarshi-Dutt-2.png?updatedAt=1739015920763" alt=""></img>
+  <h1 class="text-xl md:text-2xl text-gray-100 font-Fn mt-2">Priyadarshi Dutt</h1>
+  <div className=" flex flex-col md:flex-row  w-full justify-center items-center space-x-2">
+  <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
+  Faculty Advisor </h2>
+    <a href="https://www.linkedin.com/in/priyadarshidutt/" target="_blank"
+      class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
+<img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
+</div>
+</header>
+</div>
+</div>
 
         <div className="relative z-20 flex flex-row justify-center w-full space-x-2 md:space-x-14  mb-16">
             <div className="w-64 flex justify-center h-64">
@@ -110,7 +142,7 @@ export default function Subsystem(){
   <div className=" flex flex-col md:flex-row  w-full justify-center items-center space-x-2">
   <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
   Procurement    </h2>
-    <a href="" target="_blank"
+    <a href="https://www.linkedin.com/in/rohan-kalathil-8004a71a0?trk=contact-info" target="_blank"
       class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
 <img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
 </div>
@@ -126,7 +158,7 @@ export default function Subsystem(){
   <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
   <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
   Manufacturing   </h2>
-    <a href="" target="_blank"
+    <a href="https://www.linkedin.com/in/nandhu-achari-3283791b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank"
       class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
 <img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
 </div>
@@ -147,37 +179,7 @@ export default function Subsystem(){
 </header>
 </div>
 </div>
-{/* advisor */}
-<div className="w-full md:h-28 h-10 flex justify-center items-center font-zenDots text-2xl p-3 md:text-4xl text-white">Guiding us beyond the finish line.</div>
-<div className=" flex flex-row justify-center w-full space-x-0 md:space-x-32">
-            <div className="w-64 flex justify-center h-64">
-            <header class=" absolute flex flex-col justify-center  items-center text-center">
-  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/biju%20sir%206_42f57362.jpg?updatedAt=1739015920894" alt=""></img>
-  <h1 class="text-xl  md:text-2xl text-gray-100 font-Fn mt-2">Dr Biju N</h1>
-  <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
-  <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
-  Faculty Advisor </h2>
-    <a href="" target="_blank"
-      class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
-<img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
-</div>
-</header>
-</div>
 
-<div className="w-64 flex justify-center h-64">
-            <header class=" absolute flex flex-col justify-center  items-center text-center">
-  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/Priyadarshi-Dutt-2.png?updatedAt=1739015920763" alt=""></img>
-  <h1 class="text-xl md:text-2xl text-gray-100 font-Fn mt-2">Priyadarshi Dutt</h1>
-  <div className=" flex flex-col md:flex-row  w-full justify-center items-center space-x-2">
-  <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
-  Faculty Advisor </h2>
-    <a href="" target="_blank"
-      class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
-<img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
-</div>
-</header>
-</div>
-</div>
 
 
 </div>
