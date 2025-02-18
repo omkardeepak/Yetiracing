@@ -155,10 +155,10 @@ import { useEffect,useRef } from "react";
                     AIR 1<span className="font-fn  md:text-xs xl:text-sm text-white">Overall</span>
                     </div>
                     <div className="flex flex-col font-Fw h-full items-center md:text-lg xl:text-2xl text-red-600 ">
-                    AIR 1<span className="font-fn md:text-xs xl:text-sm text-white">Endurance</span>
+                    AIR 1<span className="font-fn md:text-xs xl:text-sm text-white">Dynamics</span>
                     </div>
                     <div className="flex flex-col font-Fw h-full items-center md:text-lg xl:text-2xl text-red-600 ">
-                    AIR 3<span className="font-fn md:text-xs xl:text-sm text-white">Efficiency</span>
+                    AIR 1<span className="font-fn md:text-xs xl:text-sm text-white">Efficiency</span>
                     </div>
                    
                   
