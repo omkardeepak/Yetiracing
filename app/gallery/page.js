@@ -20,7 +20,93 @@ const debounce = (func, wait) => {
   };
 };
 
+// Create a component specifically for the Supra gallery
+const SupraGallery = ({ images }) => {
+  const [loadedImages, setLoadedImages] = useState({});
+  const containerRef = useRef(null);
+  const observerRef = useRef(null);
+  
+  // Setup intersection observer for lazy loading
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // The whole gallery container is now visible
+              if (entry.target === containerRef.current) {
+                // Manually load all images that haven't been loaded yet
+                const imagesToLoad = images.filter(img => !loadedImages[img]);
+                if (imagesToLoad.length > 0) {
+                  imagesToLoad.forEach(imageUrl => {
+                    const img = new Image();
+                    img.src = imageUrl;
+                    img.onload = () => {
+                      setLoadedImages(prev => ({
+                        ...prev,
+                        [imageUrl]: true
+                      }));
+                    };
+                  });
+                }
+              }
+            }
+          });
+        },
+        { rootMargin: '200px 0px' } // Load images when gallery is 200px from viewport
+      );
+      
+      // Observe the container
+      if (containerRef.current) {
+        observerRef.current.observe(containerRef.current);
+      }
+    }
+    
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [images, loadedImages]);
+
+  return (
+    <div 
+      ref={containerRef} 
+      className="relative z-10 w-full px-4 py-16 bg-gradient-to-b from-black via-red to-red-950"
+    >
+      <h2 className="text-4xl md:text-5xl lg:text-7xl text-white mb-8 md:mb-12 text-center font-zenDots">
+        SAE Supra<span className="ml-3 text-red-700">'</span>24
+      </h2>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto px-4">
+        {images.map((img, index) => (
+          <div 
+            key={index}
+            className="aspect-square overflow-hidden rounded-2xl transition-transform duration-300 cursor-pointer hover:scale-95 transform-gpu"
+          >
+            <img
+              src={loadedImages[img] ? img : "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="}
+              alt={`Grid gallery image ${index + 1}`}
+              className={`w-full h-full object-cover transition-all duration-300 grayscale hover:grayscale-0 transform-gpu hover:rotate-3 ${loadedImages[img] ? '' : 'opacity-0'}`}
+              loading="lazy"
+              style={{ 
+                transition: 'opacity 0.3s ease-in-out'
+              }}
+              onLoad={() => {
+                if (!loadedImages[img]) {
+                  setLoadedImages(prev => ({...prev, [img]: true}));
+                }
+              }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const VideoGallery = () => {
+  // ... VideoGallery code remains unchanged
   const [viewport, setViewport] = useState({ width: 0, height: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -100,9 +186,10 @@ const Gallery = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const animationRef = useRef(null);
   const [hoveredCell, setHoveredCell] = useState(null);
-  const [imagesLoaded, setImagesLoaded] = useState({});
+  // Load tracking has been moved to the SupraGallery component
 
   const formulaImages = useMemo(() => [
+    // ... formulaImages array remains unchanged
     { id: 0, hoverImage: "/assets/f1.webp"},
     { id: 1, hoverImage: "/assets/f2.webp"},
     { id: 2, hoverImage: "/assets/f3.webp"},
@@ -137,40 +224,20 @@ const Gallery = () => {
     }))
   , [formulaImages]);
 
-  // Track which images have been loaded
-  const markImageAsLoaded = (url) => {
-    setImagesLoaded(prev => ({
-      ...prev,
-      [url]: true
-    }));
-  };
-
   useEffect(() => {
-    const loadImages = async () => {
-      const imageUrls = [
-        ...cells.map(cell => cell.hoverImage),
-        ...images,
+    const loadInitialImages = async () => {
+      // Load only essential images first
+      const essentialImages = [
         "/assets/shi-rembg.webp",
         "/assets/carhd.webp"
       ];
 
-      // Only load images that haven't been loaded yet
-      const unloadedImages = imageUrls.filter(url => !imagesLoaded[url]);
-      
-      if (unloadedImages.length === 0) {
-        setIsLoaded(true);
-        return;
-      }
-
       await Promise.all(
-        unloadedImages.map(url => {
+        essentialImages.map(url => {
           return new Promise((resolve) => {
             const img = new Image();
             img.src = url;
-            img.onload = () => {
-              markImageAsLoaded(url);
-              resolve();
-            };
+            img.onload = resolve;
             img.onerror = resolve;
           });
         })
@@ -179,9 +246,7 @@ const Gallery = () => {
       setIsLoaded(true);
     };
 
-    if (!isLoaded) {
-      loadImages();
-    }
+    loadInitialImages();
 
     const handleResize = debounce(() => {
       setWindowWidth(window.innerWidth);
@@ -191,44 +256,7 @@ const Gallery = () => {
     handleResize();
     
     return () => window.removeEventListener('resize', handleResize);
-  }, [cells, images, isLoaded, imagesLoaded]);
-
-  // Use the IntersectionObserver API to lazy load images only when they come into view
-  const observerRef = useRef(null);
-  
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              const dataSrc = img.getAttribute('data-src');
-              if (dataSrc) {
-                img.src = dataSrc;
-                img.removeAttribute('data-src');
-                observerRef.current.unobserve(img);
-              }
-            }
-          });
-        },
-        { rootMargin: '100px 0px' }
-      );
-    }
-    
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
   }, []);
-  
-  // Reference function for lazy loading
-  const lazyLoadRef = (node) => {
-    if (node && observerRef.current) {
-      observerRef.current.observe(node);
-    }
-  };
  
   return (
     <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
@@ -297,32 +325,10 @@ const Gallery = () => {
         </div>
       </div>
 
-      <div className="relative z-10 w-full px-4 py-16 bg-gradient-to-b from-black via-red to-red-950">
-        <h2 className="text-4xl md:text-5xl lg:text-7xl text-white mb-8 md:mb-12 text-center font-zenDots">
-          SAE Supra<span className="ml-3 text-red-700">'</span>24
-        </h2>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto px-4">
-          {images.map((img, index) => (
-            <div 
-              key={index}
-              className="aspect-square overflow-hidden rounded-2xl transition-transform duration-300 cursor-pointer
-                         hover:scale-95 transform-gpu"
-            >
-              <img
-                ref={lazyLoadRef}
-                data-src={img}
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                alt={`Grid gallery image ${index + 1}`}
-                className="w-full h-full object-cover transition-all duration-300
-                         grayscale hover:grayscale-0 transform-gpu hover:rotate-3"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Use the dedicated component for the Supra gallery */}
+      <SupraGallery images={images} />
 
+      
       <div id="media" className="min-h-screen sm:h-screen bg-gradient-to-b from-red-950 via-red-1000 to-black text-white overflow-scroll scroll-smooth">
         <div className="text-4xl sm:text-7xl font-zenDots flex pt-3 sm:pt-9 pb-9 justify-center">Media Coverage</div>
 
@@ -496,6 +502,10 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+      
+      
+     
 
 
      
