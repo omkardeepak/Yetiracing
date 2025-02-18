@@ -1,4 +1,6 @@
-"use client"
+
+
+  "use client"
 import { useState, useEffect, useRef, useMemo } from "react";
 
 import Navbar from "../components/navbar"
@@ -48,9 +50,9 @@ const VideoGallery = () => {
 
   return (
     <div className="relative w-screen h-[50vh] md:h-screen bg-gradient-to-b from-black via-red to-red-950 flex items-center justify-center overflow-hidden pt-10 md:pt-52 pr-3">
-  <div className="relative">
-    {/* SVG mask for the full GALLERY text */}
-    <svg className="absolute inset-0 w-full h-full">
+      <div className="relative">
+        {/* SVG mask for the full GALLERY text */}
+        <svg className="absolute inset-0 w-full h-full">
           <defs>
             <mask id="textMask">
               <text
@@ -93,19 +95,14 @@ const VideoGallery = () => {
   );
 };
 
-
-
-
-
 const Gallery = () => {
   const [windowWidth, setWindowWidth] = useState(1920);
   const [isLoaded, setIsLoaded] = useState(false);
   const animationRef = useRef(null);
   const [hoveredCell, setHoveredCell] = useState(null);
-
+  const [imagesLoaded, setImagesLoaded] = useState({});
 
   const formulaImages = useMemo(() => [
-    // ... (previous HOVER_IMAGES array)
     { id: 0, hoverImage: "/assets/f1.webp"},
     { id: 1, hoverImage: "/assets/f2.webp"},
     { id: 2, hoverImage: "/assets/f3.webp"},
@@ -122,8 +119,6 @@ const Gallery = () => {
     { id: 13, hoverImage: "/assets/f14.webp" },
     { id: 14, hoverImage: "/assets/f15.webp" }
   ], []);
-
-
 
   const images = useMemo(() => [
     "/assets/DSC_0181.webp",
@@ -142,22 +137,40 @@ const Gallery = () => {
     }))
   , [formulaImages]);
 
+  // Track which images have been loaded
+  const markImageAsLoaded = (url) => {
+    setImagesLoaded(prev => ({
+      ...prev,
+      [url]: true
+    }));
+  };
 
   useEffect(() => {
     const loadImages = async () => {
       const imageUrls = [
-        ...cells.map(cell => cell.mainImageUrl),
         ...cells.map(cell => cell.hoverImage),
         ...images,
-        "/assets/shi-rembg.webp"
+        "/assets/shi-rembg.webp",
+        "/assets/carhd.webp"
       ];
 
+      // Only load images that haven't been loaded yet
+      const unloadedImages = imageUrls.filter(url => !imagesLoaded[url]);
+      
+      if (unloadedImages.length === 0) {
+        setIsLoaded(true);
+        return;
+      }
+
       await Promise.all(
-        [...new Set(imageUrls)].map(url => {
+        unloadedImages.map(url => {
           return new Promise((resolve) => {
             const img = new Image();
             img.src = url;
-            img.onload = resolve;
+            img.onload = () => {
+              markImageAsLoaded(url);
+              resolve();
+            };
             img.onerror = resolve;
           });
         })
@@ -166,7 +179,9 @@ const Gallery = () => {
       setIsLoaded(true);
     };
 
-    loadImages();
+    if (!isLoaded) {
+      loadImages();
+    }
 
     const handleResize = debounce(() => {
       setWindowWidth(window.innerWidth);
@@ -176,7 +191,44 @@ const Gallery = () => {
     handleResize();
     
     return () => window.removeEventListener('resize', handleResize);
-  }, [cells, images]);
+  }, [cells, images, isLoaded, imagesLoaded]);
+
+  // Use the IntersectionObserver API to lazy load images only when they come into view
+  const observerRef = useRef(null);
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              const dataSrc = img.getAttribute('data-src');
+              if (dataSrc) {
+                img.src = dataSrc;
+                img.removeAttribute('data-src');
+                observerRef.current.unobserve(img);
+              }
+            }
+          });
+        },
+        { rootMargin: '100px 0px' }
+      );
+    }
+    
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
+  
+  // Reference function for lazy loading
+  const lazyLoadRef = (node) => {
+    if (node && observerRef.current) {
+      observerRef.current.observe(node);
+    }
+  };
  
   return (
     <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
@@ -184,12 +236,12 @@ const Gallery = () => {
       <VideoGallery />
 
       <div className="w-full min-h-screen p-4 bg-gradient-to-b from-red-950 via-red-1000 to-black">
-  <div className="max-w-6xl mx-auto">
-    <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
-      FORMULA BHARAT <span className="text-red-600">'</span>25
-    </h1>
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
+            FORMULA BHARAT <span className="text-red-600">'</span>25
+          </h1>
 
-    <div className="flex flex-col lg:flex-row gap-6 items-center justify-start">
+          <div className="flex flex-col lg:flex-row gap-6 items-center justify-start">
             <div className="w-full lg:w-3/5 relative">
               {/* Main car image container */}
               <div className="relative aspect-[5/3] border border-black overflow-hidden">
@@ -219,7 +271,6 @@ const Gallery = () => {
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             zIndex: 10,
-                            
                           }}
                         />
                       )}
@@ -259,7 +310,9 @@ const Gallery = () => {
                          hover:scale-95 transform-gpu"
             >
               <img
-                src={img}
+                ref={lazyLoadRef}
+                data-src={img}
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 alt={`Grid gallery image ${index + 1}`}
                 className="w-full h-full object-cover transition-all duration-300
                          grayscale hover:grayscale-0 transform-gpu hover:rotate-3"
@@ -270,29 +323,25 @@ const Gallery = () => {
         </div>
       </div>
 
-
       <div id="media" className="min-h-screen sm:h-screen bg-gradient-to-b from-red-950 via-red-1000 to-black text-white overflow-scroll scroll-smooth">
-        <div className="text-4xl   sm:text-7xl font-zenDots flex  pt-3 sm:pt-9 pb-9 justify-center">Media Coverage</div>
+        <div className="text-4xl sm:text-7xl font-zenDots flex pt-3 sm:pt-9 pb-9 justify-center">Media Coverage</div>
 
-          <div className="flex md:flex-row flex-col items-center justify-center ">
-          <div className=" p-2 md:p-8 ">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VCa9h0X5KDc?si=4YzUt2p1vywAYzYp" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] w-[300px] md:h-[330px] md:w-[550px]  "referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <div className="flex md:flex-row flex-col items-center justify-center">
+          <div className="p-2 md:p-8">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VCa9h0X5KDc?si=4YzUt2p1vywAYzYp" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] w-[300px] md:h-[330px] md:w-[550px]" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen loading="lazy"></iframe>
           </div>
-          <div className="md:p-8  p-2 ">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/SLfs0he6we0?si=gKjCbQiQiC0f9rqV" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] w-[300px] md:h-[330px] md:w-[550px]  " referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <div className="md:p-8 p-2">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SLfs0he6we0?si=gKjCbQiQiC0f9rqV" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] w-[300px] md:h-[330px] md:w-[550px]" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen loading="lazy"></iframe>
           </div>
+        </div>
+        <div>
+          <div className="p-2 md:p-8 flex justify-center">
+            <iframe width="900" height="420" src="https://www.youtube.com/embed/N_NSTtLch1I?si=Sv5zWi2HkalrT1RR" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] w-[300px] md:h-[300px] md:w-[900px]" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
 
-            
-          </div>
-          <div>
-            <div className=" p-2 md:p-8 flex justify-center">
-        <iframe width="900" height="420" src="https://www.youtube.com/embed/N_NSTtLch1I?si=Sv5zWi2HkalrT1RR" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share " className="h-[200px] w-[300px] md:h-[300px] md:w-[900px]  " referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-        </div>
-            </div>
-          
-          
-        </div>
-        <div className="min-h-screen w-full bg-gradient-to-b from-black to-red-700">
+      <div className="min-h-screen w-full bg-gradient-to-b from-black to-red-700">
           <div className="text-5xl sm:text-6xl flex justify-center font-zenDots  pt-16 w-full  text-white pb-20">Articles</div>
           <Carousel></Carousel>
         <div className="h-screen md:h-screen w-full md:pl-20 md:pr-20 pl-2 pr-2">
@@ -441,14 +490,20 @@ const Gallery = () => {
 
         </div>
       
-      
-    
       <Footer />
     </div>
   );
 };
 
 export default Gallery;
+
+
+     
+        
+      
+      
+    
+     
 
 
 
