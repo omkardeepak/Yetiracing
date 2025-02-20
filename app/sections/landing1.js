@@ -1,17 +1,27 @@
 "use client"
-import { useEffect, useState } from 'react';
-import YetiRacing from "../components/landingtext"
-export default function Landing(){
-      const [isLoaded, setIsLoaded] = useState(false);
-    
-      useEffect(() => {
-        // This will trigger the animation when the component is loaded
-        setIsLoaded(true);
-      }, []);
+import { useState, useEffect } from 'react';
+import Loader from '../components/loader';
+export default function Landing() {
+  const [isLoading, setIsLoading] = useState(true);
 
-    return(
-<div className="min-h-screen w-full relative z-0">
-<div className='md:w-1/2 md:right-0 w-full  md:p-0 flex flex-col  items-center absolute h-full'>
+
+  
+    // Simulating a 3-second delay for loading
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 3000); // 3-second delay
+  
+      return () => clearTimeout(timer); // Cleanup timer on unmount
+    }, []);
+
+  return (
+    <div className="min-h-screen w-full relative z-0">
+      {isLoading ? (
+        <Loader></Loader>
+      ) : (
+        <>
+          <div className='md:w-1/2 md:right-0 w-full  md:p-0 flex flex-col  items-center absolute h-full'>
 <div className='absolute md:items-center h-1/2 lg:right-14 xl:right-20 lg:top-36 bottom-3 md:bottom-0 grid  sm:grid grid-cols-2 md:grid-rows-2 lg:gap-4 xl:gap-8 gap-6 gap-y-0 md:gap-y-0 items-end mb-10'>
   <div className='bg-black md:bg-transparent bg-opacity-50 backdrop-blur-sm rounded-3xl border-2 text-sm xl:text-base border-neutral-400 h-40 w-36 xl:h-52 xl:w-48 lg:h-40 lg:w-36  z-50 text-neutral-300 flex flex-col items-center p-2 text-center justify-center font-Orbitron '>
   Formula Bharat 2025
@@ -68,7 +78,7 @@ export default function Landing(){
     </div>
     </div>
   {/* Background image */}
-  <div className='w-full h-full bg-black opacity-50 absolute z-10 '></div>
+  <div className='w-full h-full bg-black opacity-50 absolute z-10 overflow-hidden'></div>
   <img 
     src="https://ik.imagekit.io/r70knk9pu/20250124_021845_1_.jpg?updatedAt=1739204278923"
      
@@ -84,19 +94,15 @@ export default function Landing(){
     src="https://ik.imagekit.io/r70knk9pu/Photoroom-20250210_215354.png?updatedAt=1739204736891" 
 
     loading="lazy"
-    className="object-cover  w-full h-full object-top absolute top-0 left-0 z-40"
+    className="object-cover overflow-hidden  w-full h-full object-top absolute top-0 left-0 z-40"
   /> 
- <div
-      className={`xl:mt-32 lg:mt-24  mt-32 md:ml-4 z-30 object-cover font-Inter font-extrabold lg:text-[9rem] xl:text-[14rem] text-[6rem] md:tracking-wider w-full h-full object-bottom absolute top-0 flex flex-col leading-[85px] xl:leading-[185px] lg:leading-[125px] text-gray-300  bg-gradient-to-br to-neutral-600  from-neutral-100  text-transparent bg-clip-text`
-      }
+ <h1
+      className="xl:mt-32 lg:mt-24  mt-40 md:ml-4 z-30 object-cover font-Inter font-extrabold lg:text-[9rem] xl:text-[14rem] text-[6rem] md:tracking-wider w-full h-full object-bottom absolute top-0 flex flex-col leading-[85px] xl:leading-[185px] lg:leading-[125px] text-gray-300  bg-gradient-to-br to-neutral-600  from-neutral-100  text-transparent bg-clip-text"
     >
       YETI <span>RACING</span>
-    </div> 
-    
-   
-
-
+    </h1> 
+        </>
+      )}
     </div>
-
-    )
+  );
 }

@@ -6,13 +6,13 @@ export default function Subsystem(){
 
   const teamMembers = [
 
-    { name: "Govind E S", role: "Manager " , img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:"" },
+    { name: "Govind E S", role: "Manager " , img:"https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-19%20at%2020.47.25_9472a724.jpg?updatedAt=1740051654881",linkedin:"" },
     { name: "Devan P Das", role: "Manager ", img:"https://ik.imagekit.io/r70knk9pu/devan.jpg?updatedAt=1739005570408",linkedin:"https://www.linkedin.com/in/devanpdas" },
     { name: "Ashwin S", role: "Powertrain" , img:"https://ik.imagekit.io/r70knk9pu/ashwins.jpg?updatedAt=1739005570483",linkedin:"https://www.linkedin.com/in/ashwin-s-595a81319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
     { name: "Vivek H", role: "Steering", img:"https://ik.imagekit.io/r70knk9pu/vivek.jpg?updatedAt=1739005570491",linkedin:"https://www.linkedin.com/in/vivek-h-28aa26339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
-    { name: "Saif Ali K N", role: "Rollcage", img:"https://ik.imagekit.io/r70knk9pu/saif.jpg?updatedAt=1739005570547",linkedin:"https://www.linkedin.com/in/saif-ali-a24740244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-    { name: "Aswin A", role: "Suspension" , img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:"https://www.linkedin.com/in/aswin-a-3a87a7247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
-    { name: "Govind E S", role: "Brake" , img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:""},
+    { name: "Saif Ali K N", role: "Rollcage", img:"https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-19%20at%2020.47.25_98d6b650.jpg?updatedAt=1740051654412",linkedin:"https://www.linkedin.com/in/saif-ali-a24740244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Aswin A", role: "Suspension" , img:"https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-19%20at%2020.47.26_ae756ec9.jpg?updatedAt=1740051654950",linkedin:"https://www.linkedin.com/in/aswin-a-3a87a7247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
+    { name: "Govind E S", role: "Brake" , img:"https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-19%20at%2020.47.25_9472a724.jpg?updatedAt=1740051654881",linkedin:""},
     { name: "Lena Alingal", role: "Statics", img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:"https://www.linkedin.com/in/lena-alingal-788751229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " },
     { name: "Vishnu M Krishnan", role: "Media", img:"https://ik.imagekit.io/r70knk9pu/vishnu.jpg?updatedAt=1739005570487",linkedin:"https://www.linkedin.com/in/vishnumkrishnan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
   ];
@@ -122,7 +122,7 @@ export default function Subsystem(){
               <div className=" flex flex-row justify-center w-full space-x-0 md:space-x-16 mb-6">
             <div className="w-64 flex justify-center h-64">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
-  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png" alt=""></img>
+  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-19%20at%2023.44.38_1792ae10.jpg?updatedAt=1740051655234" alt=""></img>
   <h1 class="text-xl md:text-2xl text-gray-100 font-Fn mt-2">Pavna Suresh
   </h1>
   <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
@@ -137,7 +137,7 @@ export default function Subsystem(){
 
 <div className="w-64 flex justify-center h-64">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
-  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png" alt=""></img>
+  <img class="inline-flex object-cover border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-indigo-50 text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-19%20at%2020.47.25_8a249195.jpg?updatedAt=1740051654725" alt=""></img>
   <h1 class="text-xl md:text-2xl text-gray-100 font-Fn mt-2">Rohan Kalathil </h1>
   <div className=" flex flex-col md:flex-row  w-full justify-center items-center space-x-2">
   <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
@@ -192,9 +192,9 @@ export default function Subsystem(){
 
 
 <div className="relative  z-20 w-full flex justify-center h-52 mt-7 items-center">
-<div className="h-24 flex -space-x-32 hover:scale-110 -space-y-5 w-48 justify-center items-center">
+<div className="h-24 flex -space-x-32 hover:scale-110 -space-y-5 w-48 justify-center items-center hidden">
   
-<a><div className="w-36 pb-2 h-16  items-center justify-center flex border-2 text-white font-Goldman font-thin">
+<a><div className="w-36 pb-2 h-16   items-center justify-center flex border-2 text-white font-Goldman font-thin">
     View All
   </div></a>
   <a><div className="w-36 h-16  bg-gray-100 bg-opacity-15 items-center justify-center flex border-2 text-white font-Goldman font-thin">

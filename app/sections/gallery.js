@@ -51,9 +51,9 @@ export default function Crowdfund(){
 
     return(
         <div ref={progressRef} className=" text-white flex sm:flex-col flex-row h-screen bg-gradient-to-b from-black to-red-700 ">
-          {/* <Image src={abstract} alt="abs" className='absolute flex z-0 h-full w-full pb-10'/> */}
+           {/* <img src={abstract} alt="abs" className='absolute flex z-0 h-full w-full pb-10'/> */}
             <div className="flex flex-col p-4 sm:w-1/2 w-full h-screen left-0 justify-center items-center ">
-            <div className=" relative bottom-10 flex ml-12 justify-center md:ml-0 text-5xl lg:text-6xl xl:text-7xl font-zenDots bg-gradient-to-r from-cyan-500 via-green-600 to-indigo-600  text-transparent bg-clip-text w-full ">Support Us</div>
+            <div className=" relative bottom-10 flex ml-12 justify-center md:ml-0 text-5xl lg:text-6xl xl:text-7xl font-zenDots bg-gradient-to-r from-green-600 via-neutral-100  to-neutral-300  text-transparent bg-clip-text w-full ">Support Us</div>
       <div className="h-96 md:w-full max-w-lg bg-opacity-10 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-black  backdrop-blur-sm text-gray-100 p-8 rounded-3xl border-2 border-green-600 md:h-90 w-90">
         <div className="space-y-6 ">
           {/* Header */}
@@ -64,7 +64,7 @@ export default function Crowdfund(){
           {/* Description */}
           <p className="md:text-xl  text-lg leading-relaxed font-Rajdhani">
             Join YETI on the fast track to innovation
-            —help us bring our student-built Formula
+            — help us bring our student-built Formula
             race car to life with your support!
           </p>
           

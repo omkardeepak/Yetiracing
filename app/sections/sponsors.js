@@ -4,15 +4,15 @@ export default function Sponsor(){
  const tyreguru=  "https://ik.imagekit.io/r70knk9pu/tyreguru.png?updatedAt=1739006550504"
  const eds= "https://ik.imagekit.io/r70knk9pu/eds-logo.png?updatedAt=1739006489606"
  const dts= "https://ik.imagekit.io/r70knk9pu/dts-racing-logo.png?updatedAt=1739006489537"
- const wrapstyle= "https://ik.imagekit.io/r70knk9pu/wrapstyle.png?updatedAt=1739007655225"
+ const wrapstyle= "https://ik.imagekit.io/r70knk9pu/wrapstyle.png?updatedAt=1740053723606"
  const santamonica=  "https://ik.imagekit.io/r70knk9pu/santa-monica-logo.png?updatedAt=1739006550666"
       
     return (
         <div className="relative flex flex-col h-screen bg-neutral-950 text-white overflow-hidden z-0 ">
-            <video className=" absolute w-full h-full z-0 object-cover" src='https://ik.imagekit.io/r70knk9pu/IMG_6205.mp4?updatedAt=1739008273545' autoPlay loop muted></video>
+            <video className=" absolute w-full h-full z-0 object-cover" src='https://ik.imagekit.io/r70knk9pu/IMG_0854.MOV/ik-video.mp4?updatedAt=1740053953206' autoPlay loop muted></video>
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10 z-0"></div>
             <div className="relative flex sm:mt-32 mt-32 justify-center text-5xl md:text-8xl font-zenDots z-50 animate-float">
-      <span className=" p-4 sm:mr-7 bg-gradient-to-r from-red-300 via-red-600 to-orange-400 inline-block text-transparent bg-clip-text">Our Sponsors</span>
+      <span className=" p-4 sm:mr-7 text-neutral-200">Our Sponsors</span>
     </div>
 <div  className='flex items-end h-full '>
 <div className="absolute z-20">
@@ -59,7 +59,7 @@ export default function Sponsor(){
     <li>
       <img src={helloscore} height="60" width="180" alt="helloscore" />
     </li>
-  </ul> */}
+  </ul> 
 </div>
 <hr className=" bg-red-800"></hr>
 <div className="w-full overflow-hidden">
