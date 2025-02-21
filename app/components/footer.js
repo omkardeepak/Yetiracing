@@ -29,7 +29,7 @@ export default function Footer(){
       <h5 className="mb-4 md:text-2xl">CONTACT US</h5>
       <ul className="">
         <li className="flex space-x-2 sm:space-x-10">
-         Asif
+         Asif Ahammad H
         </li>
         <li className="flex space-x-2 sm:space-x-10">
             +91 6238118843
@@ -49,7 +49,7 @@ export default function Footer(){
  width="380" height="200"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="md:w-full md:h-60 sm:w-50 sm:h-50 "></iframe></div>   
   </footer>
       <div className="flex text-center justify-center space-x-7 items-center h-14 mb-2 border-b-white border-b-2">
-        <a href="https://www.instagram.com/yetiracing_cusat/" className='hover:scale-110'>
+        <a href="mailto:yetiracingsoe@gmail.com" className='hover:scale-110'>
       <img  src="https://clipartcraft.com/images/email-logo-png-gmail.png" width="30" height="30" fill="white" className="bi bi-envelope"  viewBox="0 0 16 16">
 </img>
 </a>
@@ -66,7 +66,7 @@ export default function Footer(){
 </img>
 </a>
     </div>
-    <div className="text-white text-center pb-2 font-Goldman justify-center flex"><span className='text-red-600'>Y</span>eti Racing</div>
+    <div className="text-white text-center pb-2 font-Goldman justify-center flex "><span className='text-red-600'>Y</span>eti Racing</div>
     </div>
 
     )

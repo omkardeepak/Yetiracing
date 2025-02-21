@@ -18,7 +18,7 @@ const AnimatedGrid = ({ className = "" }) => {
     // Light Styles (White Grid Lines, Transparent Background)
     // "[background-image:linear-gradient(to_right,rgba(255,255,255,0.7)_1px,transparent_0),linear-gradient(to_bottom,rgba(255,255,255,0.3)_1px,transparent_0)]",
     // Dark Styles (White Grid Lines on Dark Mode, Transparent Background)
-    "[background-image:linear-gradient(to_right,rgba(255,255,255,0.7)_1px,transparent_0),linear-gradient(to_bottom,rgba(255,255,255,0.3)_1px,transparent_0)]"
+    "[background-image:linear-gradient(to_right,rgba(255,255,255,0.2)_1px,transparent_0),linear-gradient(to_bottom,rgba(255,255,255,0.2)_1px,transparent_0)]"
   )}
 />
 

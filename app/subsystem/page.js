@@ -43,10 +43,10 @@ export default function Subsystem(){
         <div className="-mt-32 z-0 flex items-start fixed inset-0 h-full w-full" >
         <AnimatedGrid className="custom-class-for-grid " />
         </div>
-        <div className="relative z-20 h-60 -mb-16 w-full text-white font-zenDots text-5xl pt-16 md:pt-0 items-center justify-center md:flex p-3 ">Executive Committee <span className="text-red-700 ">[</span>24-25<span className="text-red-700">]</span></div>
+        <div className="relative z-20 h-60 -mb-16 w-full text-white font-zenDots text-5xl pt-16 md:pt-0 items-center justify-center md:flex sm:p-3  pl-7">Executive Committee</div>
 
         {/* advisor */} 
-<div className="w-full md:h-28  h- mt-16 md:mt-2 mb-7 flex justify-center items-center font-Orbitron text-3xl p-3 md:text-4xl text-white">Guiding us beyond the finish line.</div>
+<div className="w-full md:h-28  h- mt-16 md:mt-2 mb-7 flex justify-center items-center font-Orbitron text-3xl sm:p-3 pl-7 md:text-4xl text-white">Guiding us beyond the finish line.</div>
 <div className=" flex mb-16 flex-row justify-center w-full space-x-0 md:space-x-32">
             <div className="w-64 flex justify-center h-64">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
@@ -76,6 +76,7 @@ export default function Subsystem(){
 </header>
 </div>
 </div>
+<div className="h-32 flex justify-center w-full text-5xl  sm:text-6xl font-zenDots text-white"> <span className="text-red-700 ">[</span>24-25<span className="text-red-700">]</span></div>
 
         <div className="relative z-20 flex flex-row justify-center w-full space-x-2 md:space-x-14  mb-16">
             <div className="w-64 flex justify-center h-64">

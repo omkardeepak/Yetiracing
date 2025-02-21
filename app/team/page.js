@@ -79,7 +79,7 @@ export default function TeamPage() {
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-black via-black to-neutral-800 pb-9 pt-28">
+      <div className="min-h-screen bg-gradient-to-b from-red-900 via-neutral-950 to-neutral-950 pb-9 pt-28">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 pt-16">
           <h1 className="text-center mb-8 lg:mb-12">
             <span className="text-4xl lg:text-7xl font-zenDots text-neutral-50  flex justify-center animate-bounce">
