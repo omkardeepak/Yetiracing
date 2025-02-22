@@ -149,7 +149,7 @@ const Gallery = () => {
 
     const scroll = () => {
       if (slider) {
-        slider.scrollLeft += 1;
+        slider.scrollLeft += 8;
         if (slider.scrollLeft >= slider.scrollWidth / 2) {
           slider.scrollLeft = 0;
         }
