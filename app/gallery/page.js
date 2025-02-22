@@ -1,11 +1,11 @@
-
-
-  "use client"
+ "use client"
 import { useState, useEffect, useRef, useMemo } from "react";
 
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Utility function for debouncing
 const debounce = (func, wait) => {
@@ -20,90 +20,38 @@ const debounce = (func, wait) => {
   };
 };
 
-// Create a component specifically for the Supra gallery
-const SupraGallery = ({ images }) => {
-  const [loadedImages, setLoadedImages] = useState({});
-  const containerRef = useRef(null);
-  const observerRef = useRef(null);
-  
-  // Setup intersection observer for lazy loading
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              // The whole gallery container is now visible
-              if (entry.target === containerRef.current) {
-                // Manually load all images that haven't been loaded yet
-                const imagesToLoad = images.filter(img => !loadedImages[img]);
-                if (imagesToLoad.length > 0) {
-                  imagesToLoad.forEach(imageUrl => {
-                    const img = new Image();
-                    img.src = imageUrl;
-                    img.onload = () => {
-                      setLoadedImages(prev => ({
-                        ...prev,
-                        [imageUrl]: true
-                      }));
-                    };
-                  });
-                }
-              }
-            }
-          });
-        },
-        { rootMargin: '200px 0px' } // Load images when gallery is 200px from viewport
-      );
-      
-      // Observe the container
-      if (containerRef.current) {
-        observerRef.current.observe(containerRef.current);
-      }
-    }
-    
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, [images, loadedImages]);
+const images = [
+  "/assets/DSC_0181.webp",
+  "/assets/DSC_0027.webp",
+  "/assets/DSC_0139.webp",
+  "/assets/DSC_0173.webp",
+  "/assets/DSC_0049.webp",
+  "/assets/DSC_0473.webp",
+  "/assets/2.webp",
+  "/assets/3.webp",
+];
+const images1 = [
+  "/assets/f1.webp",
+  "/assets/f2.webp",
+  "/assets/f3.webp",
+  "/assets/f4.webp",
+  "/assets/f5.webp",
+  "/assets/f6.webp",
+  "/assets/f7.webp",
+  "/assets/f8.webp",
+  "/assets/f9.webp",
 
-  return (
-    <div 
-      ref={containerRef} 
-      className="relative z-10 w-full px-4 py-16 bg-gradient-to-b from-black via-red to-red-950"
-    >
-      <h2 className="text-4xl md:text-5xl lg:text-7xl text-white mb-8 md:mb-12 text-center font-zenDots">
-        SAE Supra<span className="ml-3 text-red-700">'</span>24
-      </h2>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto px-4">
-        {images.map((img, index) => (
-          <div 
-            key={index}
-            className="aspect-square overflow-hidden rounded-2xl transition-transform duration-300 cursor-pointer hover:scale-95 transform-gpu"
-          >
-            <img
-              src={loadedImages[img] ? img : "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="}
-              alt={`Grid gallery image ${index + 1}`}
-              className={`w-full h-full object-cover transition-all duration-300 grayscale hover:grayscale-0 transform-gpu hover:rotate-3 ${loadedImages[img] ? '' : 'opacity-0'}`}
-              loading="lazy"
-              style={{ 
-                transition: 'opacity 0.3s ease-in-out'
-              }}
-              onLoad={() => {
-                if (!loadedImages[img]) {
-                  setLoadedImages(prev => ({...prev, [img]: true}));
-                }
-              }}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+  "/assets/f11.webp",
+  "/assets/f13.webp",
+
+  "/assets/f15.webp",
+];
+const images2 = [
+  "/assets/n1.webp", "/assets/n2.webp", "/assets/n3.webp", "/assets/n4.webp", "/assets/n5.webp", "/assets/n6.webp"
+];
+
+
+
 
 const VideoGallery = () => {
   // ... VideoGallery code remains unchanged
@@ -149,8 +97,8 @@ const VideoGallery = () => {
                 className="font-black uppercase tracking-tighter"
                 style={{
                   fontSize: calculateFontSize(),
-                  letterSpacing: "-0.03em",
-                  transform: "scaleY(1.8)",  // Increased from 1.2 to 1.8 to make text taller
+                  letterSpacing: "-0.06em",
+                  transform: "scaleY(1.7)",  // Increased from 1.2 to 1.8 to make text taller
                   transformOrigin: "center",
                 }}
                 fill="white"
@@ -182,151 +130,160 @@ const VideoGallery = () => {
 };
 
 const Gallery = () => {
-  const [windowWidth, setWindowWidth] = useState(1920);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const animationRef = useRef(null);
-  const [hoveredCell, setHoveredCell] = useState(null);
-  // Load tracking has been moved to the SupraGallery component
-
-  const formulaImages = useMemo(() => [
-    // ... formulaImages array remains unchanged
-    { id: 0, hoverImage: "/assets/f1.webp"},
-    { id: 1, hoverImage: "/assets/f2.webp"},
-    { id: 2, hoverImage: "/assets/f3.webp"},
-    { id: 3, hoverImage: "/assets/f4.webp"},
-    { id: 4, hoverImage: "/assets/f5.webp"},
-    { id: 5, hoverImage: "/assets/f6.webp"},
-    { id: 6, hoverImage: "/assets/f7.webp"},
-    { id: 7, hoverImage: "/assets/f8.webp"},
-    { id: 8, hoverImage: "/assets/f9.webp"},
-    { id: 9, hoverImage: "/assets/f10.webp" },
-    { id: 10, hoverImage: "/assets/f11.webp" },
-    { id: 11, hoverImage: "/assets/f12.webp" },
-    { id: 12, hoverImage: "/assets/f13.webp" },
-    { id: 13, hoverImage: "/assets/f14.webp" },
-    { id: 14, hoverImage: "/assets/f15.webp" }
-  ], []);
-
-  const images = useMemo(() => [
-    "/assets/DSC_0181.webp",
-    "/assets/DSC_0027.webp",
-    "/assets/DSC_0139.webp",
-    "/assets/DSC_0173.webp",
-    "/assets/DSC_0049.webp",
-    "/assets/DSC_0473.webp",
-    "/assets/2.webp",
-    "/assets/3.webp"
-  ], []);
-
-  const cells = useMemo(() => 
-    formulaImages.map(img => ({
-      ...img
-    }))
-  , [formulaImages]);
+  
+  const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
-    const loadInitialImages = async () => {
-      // Load only essential images first
-      const essentialImages = [
-        "/assets/shi-rembg.webp",
-        "/assets/carhd.webp"
-      ];
+    const interval = setInterval(() => {
+      setFlipped(prev => !prev);
+    }, 5000); // Flip every 3 seconds
 
-      await Promise.all(
-        essentialImages.map(url => {
-          return new Promise((resolve) => {
-            const img = new Image();
-            img.src = url;
-            img.onload = resolve;
-            img.onerror = resolve;
-          });
-        })
-      );
+    return () => clearInterval(interval);
+  }, []);
+  
+  const sliderRef = useRef(null);
 
-      setIsLoaded(true);
+  useEffect(() => {
+    const slider = sliderRef.current;
+    let animationFrame;
+
+    const scroll = () => {
+      if (slider) {
+        slider.scrollLeft += 1;
+        if (slider.scrollLeft >= slider.scrollWidth / 2) {
+          slider.scrollLeft = 0;
+        }
+      }
+      animationFrame = requestAnimationFrame(scroll);
     };
 
-    loadInitialImages();
-
-    const handleResize = debounce(() => {
-      setWindowWidth(window.innerWidth);
-    }, 150);
-    
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    
-    return () => window.removeEventListener('resize', handleResize);
+    animationFrame = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(animationFrame);
   }, []);
+
+
+
  
   return (
-    <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500 `}>
       <Navbar />
       <VideoGallery />
 
-      <div className="w-full min-h-screen p-4 bg-gradient-to-b from-red-950 via-red-1000 to-black">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
-            FORMULA BHARAT <span className="text-red-600">'</span>25
-          </h1>
+      <div className="w-full min-h-screen p-8 bg-gradient-to-b from-red-950 via-red-900 to-black flex flex-col items-center">
+  {/* Heading - Visible and Centered */}
+  <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
+    FORMULA BHARAT <span className="text-red-600">'</span>25
+  </h1>
 
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-start">
-            <div className="w-full lg:w-3/5 relative">
-              {/* Main car image container */}
-              <div className="relative aspect-[5/3] border border-black overflow-hidden">
-                <div 
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: "url('/assets/carhd.webp')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
+  <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-center gap-8">
+    
+    {/* Main Car Grid - Responsive Proportions */}
+    <div className="relative w-full md:w-[70%] flex justify-center">
+      <div className="relative w-[100%] md:w-full aspect-[5/3] border border-black overflow-hidden">
+        <div className="absolute inset-0 grid grid-cols-4 grid-rows-3 gap-0 w-full h-full">
+          {/* Main Car Image - Ensuring Proper Fit */}
+          <Image
+            src="/assets/carhd.webp"
+            alt="Full Car"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+
+          {/* Grid Overlay */}
+          {images1.map((img, index) => (
+            <div
+              key={index}
+              className="relative w-full h-full border-[.8px] border-black"
+              style={{ perspective: "1000px" }}
+            >
+              <div
+                className="absolute inset-0 w-full h-full transition-all duration-700"
+                style={{
+                  transformStyle: "preserve-3d",
+                  transform: flipped ? "rotateY(180deg)" : "rotateY(90deg)",
+                }}
+              >
+                {/* Front side - Transparent */}
+                <div
+                  className="absolute inset-0 w-full h-full bg-transparent"
+                  style={{ backfaceVisibility: "hidden" }}
                 />
 
-                {/* Grid overlay */}
-                <div className="grid grid-cols-5 grid-rows-3 h-full">
-                  {cells.map((cell) => (
-                    <div
-                      key={cell.id}
-                      className="relative border border-black cursor-pointer overflow-hidden"
-                      onMouseEnter={() => setHoveredCell(cell.id)}
-                      onMouseLeave={() => setHoveredCell(null)}
-                    >
-                      {hoveredCell === cell.id && (
-                        <div
-                          className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-75"
-                          style={{
-                            backgroundImage: `url(${cell.hoverImage})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            zIndex: 10,
-                          }}
-                        />
-                      )}
-                    </div>
-                  ))}
+                {/* Back side - Individual image */}
+                <div
+                  className="absolute inset-0 w-full h-full"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
+                  }}
+                >
+                  <Image
+                    src={img}
+                    alt={`Image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </div>
-
-            <div className="w-full lg:w-2/5 flex items-center justify-center">
-              <div className="relative w-full aspect-square">
-                <img
-                  src="/assets/shi-rembg.webp"
-                  alt="Rotating Image"
-                  className="w-full h-full object-contain absolute transform-gpu"
-                  style={{
-                    transformOrigin: 'center center',
-                    animation: 'horizontalSpin 8s linear infinite'
-                  }}
-                />
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+    </div>
 
-      {/* Use the dedicated component for the Supra gallery */}
-      <SupraGallery images={images} />
+    {/* Rotating Image Section - Responsive Proportions */}
+    <div className="w-full md:w-[30%] flex items-center justify-center">
+      <div className="relative w-[250px] md:w-[400px] aspect-[3/4]">
+        <img
+          src="/assets/shi-rembg.webp"
+          alt="Rotating Image"
+          className="w-full h-full object-contain absolute transform-gpu"
+          style={{
+            transformOrigin: "center center",
+            animation: "horizontalSpin 8s linear infinite",
+          }}
+        />
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    <div className="relative z-10 w-full px-4 py-8 md:py-12 lg:py-16 bg-gradient-to-b from-black via-red to-red-950">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-6 sm:mb-8 md:mb-12 text-center font-zenDots">
+        SAE Supra<span className="ml-3 text-red-700">'</span>24
+      </h2>
+
+      <div className="flex justify-center items-center px-2 sm:px-4 md:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 w-full max-w-6xl">
+          {images.map((src, index) => (
+            <motion.div
+              key={index}
+              className="aspect-[4/3] sm:aspect-square w-full overflow-hidden rounded-lg shadow-lg"
+              whileHover={{
+                rotate: 5,
+                scale: .9,
+                transition: { duration: 0.3 },
+              }}
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src={src}
+                  alt={`Image ${index + 1}`}
+                  fill
+                  priority={index < 4} // Preload first viewport of images
+                  className="object-cover transition-all duration-300 filter grayscale hover:grayscale-0"
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
 
       
       <div id="media" className="min-h-screen sm:h-screen bg-gradient-to-b from-red-950 via-red-1000 to-black text-white overflow-scroll scroll-smooth">
@@ -489,7 +446,29 @@ const Gallery = () => {
   </div>
 </div>
   </div>
+  
 </div>
+
+<div 
+        ref={sliderRef} 
+        className="w-full flex overflow-hidden whitespace-nowrap pt-8"
+        style={{ scrollBehavior: 'smooth' }}
+      >
+        {[...images2, ...images2].map((src, index) => (
+          <div 
+            key={index} 
+            className="flex-shrink-0 mx-2 w-[300px] h-[200px] flex justify-center items-center "
+          >
+            <Image 
+              src={src} 
+              alt={`News cutting ${index % images2.length + 1}`} 
+              width={300} 
+              height={200} 
+              objectFit="cover"
+            />
+          </div>
+        ))}
+      </div>
 
 </div> 
 
