@@ -134,19 +134,11 @@ const Gallery = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setFlipped(prev => !prev);
-    }, 1000); // Flip every 3 seconds
+    }, 5000); // Flip every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
   
-
-      
-
-      
-
-
-
-
 
 
 
@@ -168,7 +160,7 @@ const Gallery = () => {
             <div className="relative aspect-[5/3] border border-black overflow-hidden">
               <div className="absolute inset-0">
                 {/* Main car image underneath */}
-                <div className="absolute inset-0 border-2 border-black">
+                <div className="absolute inset-0 border-1 border-black">
                   <Image
                     src="/assets/carhd.webp"
                     alt="Full Car"
@@ -242,39 +234,36 @@ const Gallery = () => {
     </div>
 
 
-      <div 
-      
-      className="relative z-10 w-full px-4 py-16 bg-gradient-to-b from-black via-red to-red-950"
-    >
-      <h2 className="text-4xl md:text-5xl lg:text-7xl text-white mb-8 md:mb-12 text-center font-zenDots">
+    <div className="relative z-10 w-full px-4 py-8 md:py-12 lg:py-16 bg-gradient-to-b from-black via-red to-red-950">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-6 sm:mb-8 md:mb-12 text-center font-zenDots">
         SAE Supra<span className="ml-3 text-red-700">'</span>24
       </h2>
-      
-      <div className="flex justify-center items-center ">
-        <div className="grid grid-cols-4 grid-rows-2 gap-6 w-full max-w-6xl">
+
+      <div className="flex justify-center items-center px-2 sm:px-4 md:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 w-full max-w-6xl">
           {images.map((src, index) => (
             <motion.div
               key={index}
-              className="w-full h-64 overflow-hidden rounded-lg shadow-lg"
+              className="aspect-[4/3] sm:aspect-square w-full overflow-hidden rounded-lg shadow-lg"
               whileHover={{
-                rotate: 10,
-                scale: 1.1,
+                rotate: 5,
+                scale: .9,
                 transition: { duration: 0.3 },
               }}
             >
-              <Image
-                src={src}
-                alt={`Image ${index + 1}`}
-                width={300}
-                height={300}
-                priority={true} // Preload images
-                loading="eager" // Force immediate load
-                className="object-cover w-full h-full transition-all duration-300 filter grayscale hover:grayscale-0"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src={src}
+                  alt={`Image ${index + 1}`}
+                  fill
+                  priority={index < 4} // Preload first viewport of images
+                  className="object-cover transition-all duration-300 filter grayscale hover:grayscale-0"
+                />
+              </div>
             </motion.div>
           ))}
-        </div> </div>
-
+        </div>
+      </div>
     </div>
 
       
