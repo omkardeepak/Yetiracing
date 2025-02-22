@@ -148,90 +148,88 @@ const Gallery = () => {
       <Navbar />
       <VideoGallery />
 
-      <div className="w-full min-h-screen p-4 bg-gradient-to-b from-red-950 via-red-900 to-black">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
-          FORMULA BHARAT <span className="text-red-600">'</span>25
-        </h1>
+      <div className="w-full min-h-screen p-8 bg-gradient-to-b from-red-950 via-red-900 to-black flex flex-col items-center">
+  {/* Heading - Visible and Centered */}
+  <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
+    FORMULA BHARAT <span className="text-red-600">'</span>25
+  </h1>
 
-        <div className="flex flex-col lg:flex-row gap-6 items-center justify-start">
-          {/* Main car image container */}
-          <div className="relative w-full lg:w-3/5">
-            <div className="relative aspect-[5/3] border border-black overflow-hidden">
-              <div className="absolute inset-0">
-                {/* Main car image underneath */}
-                <div className="absolute inset-0 border-1 border-black">
+  <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-center gap-8">
+    
+    {/* Main Car Grid - Responsive Proportions */}
+    <div className="relative w-full md:w-[70%] flex justify-center">
+      <div className="relative w-[90%] md:w-full aspect-[3/2] border border-black overflow-hidden">
+        <div className="absolute inset-0 grid grid-cols-5 grid-rows-3 gap-0 w-full h-full">
+          {/* Main Car Image - Ensuring Proper Fit */}
+          <Image
+            src="/assets/carhd.webp"
+            alt="Full Car"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+
+          {/* Grid Overlay */}
+          {images1.map((img, index) => (
+            <div
+              key={index}
+              className="relative w-full h-full border-[1.5px] border-black"
+              style={{ perspective: "1000px" }}
+            >
+              <div
+                className="absolute inset-0 w-full h-full transition-all duration-700"
+                style={{
+                  transformStyle: "preserve-3d",
+                  transform: flipped ? "rotateY(180deg)" : "rotateY(90deg)",
+                }}
+              >
+                {/* Front side - Transparent */}
+                <div
+                  className="absolute inset-0 w-full h-full bg-transparent"
+                  style={{ backfaceVisibility: "hidden" }}
+                />
+
+                {/* Back side - Individual image */}
+                <div
+                  className="absolute inset-0 w-full h-full"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
+                  }}
+                >
                   <Image
-                    src="/assets/carhd.webp"
-                    alt="Full Car"
+                    src={img}
+                    alt={`Image ${index + 1}`}
                     fill
                     className="object-cover"
                     priority
                   />
                 </div>
-
-                {/* Grid overlay */}
-                <div className="absolute inset-0 grid grid-cols-5 grid-rows-3 gap-0">
-                  {images1.map((img, index) => (
-                    <div
-                      key={index}
-                      className="relative w-full h-full border-2 border-black"
-                      style={{ perspective: "1000px" }}
-                    >
-                      <div
-                        className="absolute inset-0 w-full h-full transition-all duration-700"
-                        style={{
-                          transformStyle: "preserve-3d",
-                          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)"
-                        }}
-                      >
-                        {/* Front side - Empty div with just border */}
-                        <div 
-                          className="absolute inset-0 w-full h-full bg-transparent"
-                          style={{ backfaceVisibility: "hidden" }}
-                        />
-                        
-                        {/* Back side - Individual image */}
-                        <div 
-                          className="absolute inset-0 w-full h-full"
-                          style={{
-                            backfaceVisibility: "hidden",
-                            transform: "rotateY(180deg)"
-                          }}
-                        >
-                          <Image
-                            src={img}
-                            alt={`Image ${index + 1}`}
-                            fill
-                            className="object-cover"
-                            priority
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
-          </div>
-
-          {/* Rotating image section */}
-          <div className="w-full lg:w-2/5 flex items-center justify-center">
-            <div className="relative w-full aspect-square">
-              <img
-                src="/assets/shi-rembg.webp"
-                alt="Rotating Image"
-                className="w-full h-full object-contain absolute transform-gpu"
-                style={{
-                  transformOrigin: 'center center',
-                  animation: 'horizontalSpin 8s linear infinite'
-                }}
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
+
+    {/* Rotating Image Section - Responsive Proportions */}
+    <div className="w-full md:w-[30%] flex items-center justify-center">
+      <div className="relative w-[250px] md:w-[400px] aspect-[3/4]">
+        <img
+          src="/assets/shi-rembg.webp"
+          alt="Rotating Image"
+          className="w-full h-full object-contain absolute transform-gpu"
+          style={{
+            transformOrigin: "center center",
+            animation: "horizontalSpin 8s linear infinite",
+          }}
+        />
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 
     <div className="relative z-10 w-full px-4 py-8 md:py-12 lg:py-16 bg-gradient-to-b from-black via-red to-red-950">
