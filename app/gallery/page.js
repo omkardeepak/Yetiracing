@@ -173,7 +173,7 @@ const Gallery = () => {
           {images1.map((img, index) => (
             <div
               key={index}
-              className="relative w-full h-full border-[1.5px] border-black"
+              className="relative w-full h-full border-[.8px] border-black"
               style={{ perspective: "1000px" }}
             >
               <div
