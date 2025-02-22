@@ -159,7 +159,7 @@ const Gallery = () => {
     {/* Main Car Grid - Responsive Proportions */}
     <div className="relative w-full md:w-[70%] flex justify-center">
       <div className="relative w-[90%] md:w-full aspect-[3/2] border border-black overflow-hidden">
-        <div className="absolute inset-0 grid grid-cols-5 grid-rows-3 gap-0 w-full h-full">
+        <div className="absolute inset-0 grid grid-cols-4 grid-rows-3 gap-0 w-full h-full">
           {/* Main Car Image - Ensuring Proper Fit */}
           <Image
             src="/assets/carhd.webp"
