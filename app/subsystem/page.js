@@ -47,8 +47,7 @@ export default function Subsystem(){
 
         {/* advisor */} 
 <div className="w-full md:h-28  h- mt-16 md:mt-2 mb-7 flex justify-center items-center font-Orbitron text-3xl sm:p-3 pl-7 md:text-4xl text-white">Guiding us beyond the finish line.</div>
-<div className=" flex mb-16 flex-row justify-center w-full space-x-0 md:space-x-32">
-            <div className="w-64 flex justify-center h-64">
+<div className="w-full sm:hidden flex justify-center h-64 ">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
   <img class="inline-flex object-contain border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-white text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-08%20at%2020.28.26_a22c52b6.jpg?updatedAt=1739794940348" alt=""></img>
   <h1 class="text-xl  md:text-2xl text-gray-100 font-Fn mt-2">Dr Biju N</h1>
@@ -61,6 +60,34 @@ export default function Subsystem(){
 </div>
 </header>
 </div>
+<div className=" flex mb-16 flex-row justify-center w-full space-x-0 md:space-x-32">
+<div className="w-64 flex justify-center h-64">
+            <header class=" absolute flex flex-col justify-center  items-center text-center">
+  <img class="inline-flex object-contain border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-white text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-22%20at%2017.16.03_fdd35ac2.jpg?updatedAt=1740226522168" alt=""></img>
+  <h1 class="text-xl  md:text-2xl text-gray-100 font-Fn mt-2">Gireesh Kumaran</h1>
+  <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
+  <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
+  Faculty Advisor </h2>
+    <a href="https://www.linkedin.com/in/gireesh-kumaran-thampi-b-s-6711253b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"
+      class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
+<img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
+</div>
+</header>
+</div>
+
+ <div className="w-64 hidden sm:flex justify-center h-64 ">
+            <header class=" absolute flex flex-col justify-center  items-center text-center">
+  <img class="inline-flex object-contain border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-white text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-08%20at%2020.28.26_a22c52b6.jpg?updatedAt=1739794940348" alt=""></img>
+  <h1 class="text-xl  md:text-2xl text-gray-100 font-Fn mt-2">Dr Biju N</h1>
+  <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
+  <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
+  Faculty Advisor </h2>
+    <a href="https://www.linkedin.com/in/biju-n-4287a9a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank"
+      class="text-indigo-900  font-bold border-b-0  hover:scale-110 transition-all">
+<img src="https://www.svgrepo.com/show/349436/linkedin.svg" alt='linkedin' width="30" height="30"></img></a>
+</div>
+</header>
+</div>           
 
 <div className="w-64 flex justify-center h-64">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
