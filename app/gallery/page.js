@@ -40,11 +40,11 @@ const images1 = [
   "/assets/f7.webp",
   "/assets/f8.webp",
   "/assets/f9.webp",
-  "/assets/f10.webp",
+
   "/assets/f11.webp",
-  "/assets/f12.webp",
+
   "/assets/f13.webp",
-  "/assets/f14.webp",
+
   "/assets/f15.webp",
 ];
 
