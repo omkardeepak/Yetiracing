@@ -149,8 +149,8 @@ const VideoGallery = () => {
                 className="font-black uppercase tracking-tighter"
                 style={{
                   fontSize: calculateFontSize(),
-                  letterSpacing: "-0.03em",
-                  transform: "scaleY(1.8)",  // Increased from 1.2 to 1.8 to make text taller
+                  letterSpacing: "-0.08em",
+                  transform: "scaleY(1.7)",  // Increased from 1.2 to 1.8 to make text taller
                   transformOrigin: "center",
                 }}
                 fill="white"
