@@ -347,7 +347,7 @@ const Gallery = () => {
         </div>
       </div>
 
-      <div className="h-auto w-full bg-gradient-to-b from-black to-red-700">
+      <div className="min-h-screen w-full bg-gradient-to-b from-black to-red-700">
       
           <div className="z-50 h-40 text-5xl sm:text-6xl flex justify-center font-zenDots  pt-16 w-full  text-white pb-20">Articles</div>
         <div className="z-50 h-auto md:h-auto w-full md:pl-20 md:pr-20 pl-2 pr-2 mb-20">
