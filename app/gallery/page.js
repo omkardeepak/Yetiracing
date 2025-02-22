@@ -51,6 +51,7 @@ const images1 = [
 
 
 
+
 const VideoGallery = () => {
   // ... VideoGallery code remains unchanged
   const [viewport, setViewport] = useState({ width: 0, height: 0 });
@@ -95,7 +96,7 @@ const VideoGallery = () => {
                 className="font-black uppercase tracking-tighter"
                 style={{
                   fontSize: calculateFontSize(),
-                  letterSpacing: "-0.08em",
+                  letterSpacing: "-0.06em",
                   transform: "scaleY(1.7)",  // Increased from 1.2 to 1.8 to make text taller
                   transformOrigin: "center",
                 }}
@@ -158,7 +159,7 @@ const Gallery = () => {
     
     {/* Main Car Grid - Responsive Proportions */}
     <div className="relative w-full md:w-[70%] flex justify-center">
-      <div className="relative w-[90%] md:w-full aspect-[3/2] border border-black overflow-hidden">
+      <div className="relative w-[100%] md:w-full aspect-[5/3] border border-black overflow-hidden">
         <div className="absolute inset-0 grid grid-cols-4 grid-rows-3 gap-0 w-full h-full">
           {/* Main Car Image - Ensuring Proper Fit */}
           <Image
