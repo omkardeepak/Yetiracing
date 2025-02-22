@@ -1,11 +1,11 @@
-
-
-  "use client"
+ "use client"
 import { useState, useEffect, useRef, useMemo } from "react";
 
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Utility function for debouncing
 const debounce = (func, wait) => {
@@ -20,90 +20,36 @@ const debounce = (func, wait) => {
   };
 };
 
-// Create a component specifically for the Supra gallery
-const SupraGallery = ({ images }) => {
-  const [loadedImages, setLoadedImages] = useState({});
-  const containerRef = useRef(null);
-  const observerRef = useRef(null);
-  
-  // Setup intersection observer for lazy loading
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              // The whole gallery container is now visible
-              if (entry.target === containerRef.current) {
-                // Manually load all images that haven't been loaded yet
-                const imagesToLoad = images.filter(img => !loadedImages[img]);
-                if (imagesToLoad.length > 0) {
-                  imagesToLoad.forEach(imageUrl => {
-                    const img = new Image();
-                    img.src = imageUrl;
-                    img.onload = () => {
-                      setLoadedImages(prev => ({
-                        ...prev,
-                        [imageUrl]: true
-                      }));
-                    };
-                  });
-                }
-              }
-            }
-          });
-        },
-        { rootMargin: '200px 0px' } // Load images when gallery is 200px from viewport
-      );
-      
-      // Observe the container
-      if (containerRef.current) {
-        observerRef.current.observe(containerRef.current);
-      }
-    }
-    
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, [images, loadedImages]);
+const images = [
+  "/assets/DSC_0181.webp",
+  "/assets/DSC_0027.webp",
+  "/assets/DSC_0139.webp",
+  "/assets/DSC_0173.webp",
+  "/assets/DSC_0049.webp",
+  "/assets/DSC_0473.webp",
+  "/assets/2.webp",
+  "/assets/3.webp",
+];
+const images1 = [
+  "/assets/f1.webp",
+  "/assets/f2.webp",
+  "/assets/f3.webp",
+  "/assets/f4.webp",
+  "/assets/f5.webp",
+  "/assets/f6.webp",
+  "/assets/f7.webp",
+  "/assets/f8.webp",
+  "/assets/f9.webp",
+  "/assets/f10.webp",
+  "/assets/f11.webp",
+  "/assets/f12.webp",
+  "/assets/f13.webp",
+  "/assets/f14.webp",
+  "/assets/f15.webp",
+];
 
-  return (
-    <div 
-      ref={containerRef} 
-      className="relative z-10 w-full px-4 py-16 bg-gradient-to-b from-black via-red to-red-950"
-    >
-      <h2 className="text-4xl md:text-5xl lg:text-7xl text-white mb-8 md:mb-12 text-center font-zenDots">
-        SAE Supra<span className="ml-3 text-red-700">'</span>24
-      </h2>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto px-4">
-        {images.map((img, index) => (
-          <div 
-            key={index}
-            className="aspect-square overflow-hidden rounded-2xl transition-transform duration-300 cursor-pointer hover:scale-95 transform-gpu"
-          >
-            <img
-              src={loadedImages[img] ? img : "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="}
-              alt={`Grid gallery image ${index + 1}`}
-              className={`w-full h-full object-cover transition-all duration-300 grayscale hover:grayscale-0 transform-gpu hover:rotate-3 ${loadedImages[img] ? '' : 'opacity-0'}`}
-              loading="lazy"
-              style={{ 
-                transition: 'opacity 0.3s ease-in-out'
-              }}
-              onLoad={() => {
-                if (!loadedImages[img]) {
-                  setLoadedImages(prev => ({...prev, [img]: true}));
-                }
-              }}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+
+
 
 const VideoGallery = () => {
   // ... VideoGallery code remains unchanged
@@ -182,151 +128,154 @@ const VideoGallery = () => {
 };
 
 const Gallery = () => {
-  const [windowWidth, setWindowWidth] = useState(1920);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const animationRef = useRef(null);
-  const [hoveredCell, setHoveredCell] = useState(null);
-  // Load tracking has been moved to the SupraGallery component
-
-  const formulaImages = useMemo(() => [
-    // ... formulaImages array remains unchanged
-    { id: 0, hoverImage: "/assets/f1.webp"},
-    { id: 1, hoverImage: "/assets/f2.webp"},
-    { id: 2, hoverImage: "/assets/f3.webp"},
-    { id: 3, hoverImage: "/assets/f4.webp"},
-    { id: 4, hoverImage: "/assets/f5.webp"},
-    { id: 5, hoverImage: "/assets/f6.webp"},
-    { id: 6, hoverImage: "/assets/f7.webp"},
-    { id: 7, hoverImage: "/assets/f8.webp"},
-    { id: 8, hoverImage: "/assets/f9.webp"},
-    { id: 9, hoverImage: "/assets/f10.webp" },
-    { id: 10, hoverImage: "/assets/f11.webp" },
-    { id: 11, hoverImage: "/assets/f12.webp" },
-    { id: 12, hoverImage: "/assets/f13.webp" },
-    { id: 13, hoverImage: "/assets/f14.webp" },
-    { id: 14, hoverImage: "/assets/f15.webp" }
-  ], []);
-
-  const images = useMemo(() => [
-    "/assets/DSC_0181.webp",
-    "/assets/DSC_0027.webp",
-    "/assets/DSC_0139.webp",
-    "/assets/DSC_0173.webp",
-    "/assets/DSC_0049.webp",
-    "/assets/DSC_0473.webp",
-    "/assets/2.webp",
-    "/assets/3.webp"
-  ], []);
-
-  const cells = useMemo(() => 
-    formulaImages.map(img => ({
-      ...img
-    }))
-  , [formulaImages]);
+  
+  const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
-    const loadInitialImages = async () => {
-      // Load only essential images first
-      const essentialImages = [
-        "/assets/shi-rembg.webp",
-        "/assets/carhd.webp"
-      ];
+    const interval = setInterval(() => {
+      setFlipped(prev => !prev);
+    }, 1000); // Flip every 3 seconds
 
-      await Promise.all(
-        essentialImages.map(url => {
-          return new Promise((resolve) => {
-            const img = new Image();
-            img.src = url;
-            img.onload = resolve;
-            img.onerror = resolve;
-          });
-        })
-      );
-
-      setIsLoaded(true);
-    };
-
-    loadInitialImages();
-
-    const handleResize = debounce(() => {
-      setWindowWidth(window.innerWidth);
-    }, 150);
-    
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    
-    return () => window.removeEventListener('resize', handleResize);
+    return () => clearInterval(interval);
   }, []);
+  
+
+      
+
+      
+
+
+
+
+
+
+
  
   return (
-    <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500 `}>
       <Navbar />
       <VideoGallery />
 
-      <div className="w-full min-h-screen p-4 bg-gradient-to-b from-red-950 via-red-1000 to-black">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
-            FORMULA BHARAT <span className="text-red-600">'</span>25
-          </h1>
+      <div className="w-full min-h-screen p-4 bg-gradient-to-b from-red-950 via-red-900 to-black">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
+          FORMULA BHARAT <span className="text-red-600">'</span>25
+        </h1>
 
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-start">
-            <div className="w-full lg:w-3/5 relative">
-              {/* Main car image container */}
-              <div className="relative aspect-[5/3] border border-black overflow-hidden">
-                <div 
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: "url('/assets/carhd.webp')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                />
+        <div className="flex flex-col lg:flex-row gap-6 items-center justify-start">
+          {/* Main car image container */}
+          <div className="relative w-full lg:w-3/5">
+            <div className="relative aspect-[5/3] border border-black overflow-hidden">
+              <div className="absolute inset-0">
+                {/* Main car image underneath */}
+                <div className="absolute inset-0 border-2 border-black">
+                  <Image
+                    src="/assets/carhd.webp"
+                    alt="Full Car"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
 
                 {/* Grid overlay */}
-                <div className="grid grid-cols-5 grid-rows-3 h-full">
-                  {cells.map((cell) => (
+                <div className="absolute inset-0 grid grid-cols-5 grid-rows-3 gap-0">
+                  {images1.map((img, index) => (
                     <div
-                      key={cell.id}
-                      className="relative border border-black cursor-pointer overflow-hidden"
-                      onMouseEnter={() => setHoveredCell(cell.id)}
-                      onMouseLeave={() => setHoveredCell(null)}
+                      key={index}
+                      className="relative w-full h-full border-2 border-black"
+                      style={{ perspective: "1000px" }}
                     >
-                      {hoveredCell === cell.id && (
-                        <div
-                          className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-75"
-                          style={{
-                            backgroundImage: `url(${cell.hoverImage})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            zIndex: 10,
-                          }}
+                      <div
+                        className="absolute inset-0 w-full h-full transition-all duration-700"
+                        style={{
+                          transformStyle: "preserve-3d",
+                          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)"
+                        }}
+                      >
+                        {/* Front side - Empty div with just border */}
+                        <div 
+                          className="absolute inset-0 w-full h-full bg-transparent"
+                          style={{ backfaceVisibility: "hidden" }}
                         />
-                      )}
+                        
+                        {/* Back side - Individual image */}
+                        <div 
+                          className="absolute inset-0 w-full h-full"
+                          style={{
+                            backfaceVisibility: "hidden",
+                            transform: "rotateY(180deg)"
+                          }}
+                        >
+                          <Image
+                            src={img}
+                            alt={`Image ${index + 1}`}
+                            fill
+                            className="object-cover"
+                            priority
+                          />
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="w-full lg:w-2/5 flex items-center justify-center">
-              <div className="relative w-full aspect-square">
-                <img
-                  src="/assets/shi-rembg.webp"
-                  alt="Rotating Image"
-                  className="w-full h-full object-contain absolute transform-gpu"
-                  style={{
-                    transformOrigin: 'center center',
-                    animation: 'horizontalSpin 8s linear infinite'
-                  }}
-                />
-              </div>
+          {/* Rotating image section */}
+          <div className="w-full lg:w-2/5 flex items-center justify-center">
+            <div className="relative w-full aspect-square">
+              <img
+                src="/assets/shi-rembg.webp"
+                alt="Rotating Image"
+                className="w-full h-full object-contain absolute transform-gpu"
+                style={{
+                  transformOrigin: 'center center',
+                  animation: 'horizontalSpin 8s linear infinite'
+                }}
+              />
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      {/* Use the dedicated component for the Supra gallery */}
-      <SupraGallery images={images} />
+
+      <div 
+      
+      className="relative z-10 w-full px-4 py-16 bg-gradient-to-b from-black via-red to-red-950"
+    >
+      <h2 className="text-4xl md:text-5xl lg:text-7xl text-white mb-8 md:mb-12 text-center font-zenDots">
+        SAE Supra<span className="ml-3 text-red-700">'</span>24
+      </h2>
+      
+      <div className="flex justify-center items-center ">
+        <div className="grid grid-cols-4 grid-rows-2 gap-6 w-full max-w-6xl">
+          {images.map((src, index) => (
+            <motion.div
+              key={index}
+              className="w-full h-64 overflow-hidden rounded-lg shadow-lg"
+              whileHover={{
+                rotate: 10,
+                scale: 1.1,
+                transition: { duration: 0.3 },
+              }}
+            >
+              <Image
+                src={src}
+                alt={`Image ${index + 1}`}
+                width={300}
+                height={300}
+                priority={true} // Preload images
+                loading="eager" // Force immediate load
+                className="object-cover w-full h-full transition-all duration-300 filter grayscale hover:grayscale-0"
+              />
+            </motion.div>
+          ))}
+        </div> </div>
+
+    </div>
 
       
       <div id="media" className="min-h-screen sm:h-screen bg-gradient-to-b from-red-950 via-red-1000 to-black text-white overflow-scroll scroll-smooth">
