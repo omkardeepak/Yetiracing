@@ -17,7 +17,7 @@ export const metadata = {
   title: "Yeti Racing",
   description: "Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT).",
   icons: {
-    icon: "/assets/logo2.webp", // Path to favicon/logo
+    icon: "/assets/logo1.png", // Path to favicon/logo
   },
   openGraph: {
     title: "Yeti Racing",
