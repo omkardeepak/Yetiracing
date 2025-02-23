@@ -203,7 +203,7 @@ useEffect(() => {
                 className="absolute inset-0 w-full h-full transition-all duration-700"
                 style={{
                   transformStyle: "preserve-3d",
-                  transform: flipped ? "rotateY(180deg)" : "rotateY(90deg)",
+                  transform: flipped ? "rotateY(180deg)" : "rotateY(270deg)",
                 }}
               >
                 {/* Front side - Transparent */}
