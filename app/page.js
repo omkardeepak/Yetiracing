@@ -59,7 +59,9 @@ export default function Home() {
     <About1 />
     <Crowdfund />
     <Sponsor />
+    <div className="relative z-20">
     <Footer />
+    </div>
   </div>
 </div>
 

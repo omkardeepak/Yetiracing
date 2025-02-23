@@ -68,7 +68,7 @@ import { useEffect,useRef } from "react";
             <div className="border-2 md:w-5/6 md:h-4/6  justify-center  rounded-xl  bg-black bg-opacity-40 w-80  ">
             <div className="font-Goldman flex flex-col p-6 pt-2 pb-2 text-3xl lg:text-4xl xl:text-5xl md:p-6 md:pb-1 xl:pb-6 text-neutral-200"><div className="flex"><span className=""> Y</span>eti Racing</div><span className="lg:text-lg xl:text-xl text-sm text-red-600 font-Fw">CUSAT</span></div>
             <div ref={scrollDivRef} className=" opacity-0 transform  transition-all duration-700" >
-            <div  className="  p-7 pb-2 pt-0   xl:pb-5 text-lg lg:text-xl xl:text-[1.6rem] flex w-full  text-justify text-neutral-200 font-Rajdhani ">
+            <div  className="  p-7 pb-2 pt-0   xl:pb-7 text-lg lg:text-xl xl:text-[1.5rem] flex w-full  text-justify leading-relaxed text-white  font-Rajdhani font-light">
             Yeti Racing, a leading force in Formula Student vehicle construction from Cochin University of Science and Technology, Kochi, embodies dedication and collaboration, with a strong presence in prestigious competitions like SAE SUPRA, FFS INDIA, and FORMULA BHARAT. Since our debut in SUPRA 2017, we've made significant strides in automotive engineering excellence.            </div>
             </div>
             
@@ -87,7 +87,7 @@ import { useEffect,useRef } from "react";
               <div className="relative md:mb-16 pl-10 timeline-item ">
                 <div className="absolute left-0 top-0 w-3 h-3 bg-gray-100 rounded-full"></div>
                 <div className="p-4 bg-black border-2 border-gray-400  bg-opacity-25 backdrop-blur-sm rounded-2xl shadow-md xl:w-full w-full h-36 space-y-3 space-x-3">
-                  <h3 className="text-orange-500 md:text-lg font-Fb">SAE SUPRA 2017</h3>
+                  <h3 className="text-orange-500 md:text-lg font-Fb">FFS India 2017</h3>
                   <div className="absolute right-7 top-1 hover:scale-110">
                     <a href="/team#achievements" >
                   <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="lightgreen" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
@@ -97,13 +97,13 @@ import { useEffect,useRef } from "react";
                   </div>
                   <div className="text-gray-300 font-Fn flex flex-row md:space-x-6  xl:min-space-x-9  justify-center ">
                     <div className="flex flex-col font-Fw h-full items-center md:text-lg xl:text-2xl  text-red-600">
+                    AIR 7<span className="font-fn md:text-xs xl:text-sm text-white">Overall</span>
+                    </div>
+                    <div className="flex flex-col font-Fw h-full items-center md:text-lg xl:text-2xl text-red-600">
                     AIR 4<span className="font-fn md:text-xs xl:text-sm text-white">Design</span>
                     </div>
                     <div className="flex flex-col font-Fw h-full items-center md:text-lg xl:text-2xl text-red-600">
-                    AIR 6<span className="font-fn md:text-xs xl:text-sm text-white">Endurance</span>
-                    </div>
-                    <div className="flex flex-col font-Fw h-full items-center md:text-lg xl:text-2xl text-red-600">
-                    AIR 3<span className="font-fn md:text-xs xl:text-sm text-white">Cost</span>
+                    AIR 5<span className="font-fn md:text-xs xl:text-sm text-white">Sales</span>
                     </div>
                    
                   

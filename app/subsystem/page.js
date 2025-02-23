@@ -1,8 +1,37 @@
+"use client"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 import AnimatedGrid from "../components/grid";
+import { useState,useRef,useEffect } from "react";
 export default function Subsystem(){
 
+const [yearisVisible, yearsetIsVisible] = useState(false);
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            yearsetIsVisible(true);
+          } else {
+            yearsetIsVisible(false);
+          }
+        });
+      },
+      { threshold: 0.7 } // Adjust the threshold as needed
+    );
+
+    if (divRef.current) {
+      observer.observe(divRef.current);
+    }
+
+    return () => {
+      if (divRef.current) {
+        observer.unobserve(divRef.current);
+      }
+    };
+  }, []);
 
   const teamMembers = [
 
@@ -43,10 +72,14 @@ export default function Subsystem(){
         <div className="-mt-32 z-0 flex items-start fixed inset-0 h-full w-full" >
         <AnimatedGrid className="custom-class-for-grid " />
         </div>
-        <div className="relative z-20 h-60 -mb-16 w-full text-white font-zenDots text-5xl pt-16 md:pt-0 items-center justify-center md:flex sm:p-3  pl-7">Executive Committee</div>
+        <div ref={divRef} className={`transition-transform duration-1000 ease-in-out transform ${
+          yearisVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+      }`}>
+        <div  className="relative z-20 h-60 -mb-16 w-full text-white font-zenDots text-5xl pt-16 md:pt-0 items-center justify-center md:flex sm:p-3  pl-7 ">Executive Committee</div>
 
         {/* advisor */} 
 <div className="w-full md:h-28  h- mt-16 md:mt-2 mb-7 flex justify-center items-center font-Orbitron text-3xl sm:p-3 pl-7 md:text-4xl text-white">Guiding us beyond the finish line.</div>
+</div>
 <div className="w-full sm:hidden flex justify-center h-64 ">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
   <img class="inline-flex object-contain border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-white text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-08%20at%2020.28.26_a22c52b6.jpg?updatedAt=1739794940348" alt=""></img>
@@ -64,7 +97,7 @@ export default function Subsystem(){
 <div className="w-64 flex justify-center h-64">
             <header class=" absolute flex flex-col justify-center  items-center text-center">
   <img class="inline-flex object-contain border-2 border-white rounded-full shadow-[5px_5px_0_0_rgba(0,0,0,1)] shadow-green-600/100 bg-white text-indigo-600 h-36 w-36 md:h-48 md:w-48" src="https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-22%20at%2017.16.03_fdd35ac2.jpg?updatedAt=1740226522168" alt=""></img>
-  <h1 class="text-xl  md:text-2xl text-gray-100 font-Fn mt-2">Gireesh Kumaran</h1>
+  <h1 class="text-xl  md:text-2xl text-gray-100 font-Fn mt-2">Dr Gireesh Kumaran </h1>
   <div className=" flex flex-col md:flex-row justify-center w-full items-center space-x-2">
   <h2 class="text-base md:text-lg text-gray-200 font-Orbitron">
   Faculty Advisor </h2>
@@ -103,7 +136,7 @@ export default function Subsystem(){
 </header>
 </div>
 </div>
-<div className="h-32 flex justify-center w-full text-5xl  sm:text-6xl font-zenDots text-white"> <span className="text-red-700 ">[</span>24-25<span className="text-red-700">]</span></div>
+<div  className="h-32 flex justify-center w-full text-5xl  sm:text-6xl font-zenDots text-white"> <span className="text-red-700 ">[</span>24-25<span className="text-red-700">]</span></div>
 
         <div className="relative z-20 flex flex-row justify-center w-full space-x-2 md:space-x-14  mb-16">
             <div className="w-64 flex justify-center h-64">

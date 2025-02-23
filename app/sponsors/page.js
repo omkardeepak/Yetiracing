@@ -1,11 +1,14 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
+import AnimatedGrid from '../components/grid';
 
 export default function SponsorsPage() {
+
+  
   const [visibleSections, setVisibleSections] = useState({
     santaMonica: false,
     dtsRacing: false,
@@ -53,16 +56,19 @@ export default function SponsorsPage() {
       <div className="min-h-screen pt-28">
         {/* First Screen - Black to Dark Red Gradient */}
         <div className="bg-gradient-to-b from-black to-red-900 z-0">
-        <div
+        <div className="-mt-32 z-0 flex items-start fixed inset-0 h-full w-full" >
+        <AnimatedGrid className="custom-class-for-grid " />
+        </div>
+        {/* <div
   className=" z-0 mt-14 fixed inset-0 h-full w-full  bg-[radial-gradient(#d3d3d3_1px,transparent_1px)] [background-size:36px_36px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_5%,transparent_90%)]"
-></div>
+></div> */}
           <div className=" z-50 max-w-[90%] 2xl:max-w-[1400px] mx-auto px-4 py-8 sm:py-12 md:py-16">
             <h1 className="text-center mb-8 sm:mb-12 animate-bounce text-3xl sm:text-4xl lg:text-6xl flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
               <span className="text-red-600 font-bold font-zenDots">OUR</span>
               <span className="text-white font-bold font-zenDots">SPONSORS</span>
             </h1>
             
-            <div className="max-w-4xl mx-auto text-base sm:text-lg lg:text-2xl text-center mb-8 sm:mb-12 md:mb-16">
+            <div className="max-w-4xl mx-auto text-base sm:text-lg lg:text-2xl text-center mb-8 sm:mb-12 md:mb-16 ">
               <p className="mb-4 sm:mb-8 text-gray-300 text-justify font-Rajdhani px-4">
                 Yeti Racing is dedicated to pushing the limits of student innovation each year. As a non-profit student team, we deeply appreciate the invaluable support from generous companies and institutions.
               </p>

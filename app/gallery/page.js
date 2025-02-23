@@ -3,9 +3,9 @@ import { useState, useEffect, useRef, useMemo } from "react";
 
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { motion } from "framer-motion";
 import Image from "next/image";
+import AnimatedGrid from "../components/grid";
 
 // Utility function for debouncing
 const debounce = (func, wait) => {
@@ -167,13 +167,20 @@ useEffect(() => {
 
  
   return (
-    <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500 `}>
+    <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500  `}>
+              <div className=" z-0 flex items-start fixed inset-0 h-full w-full" >
+
+            <AnimatedGrid className="custom-class-for-grid h-full absolute " />
+            </div>
+
       <Navbar />
-      <VideoGallery />
+      <VideoGallery className="" />
 
       <div className="w-full min-h-screen p-8 bg-gradient-to-b from-red-950 via-red-900 to-black flex flex-col items-center">
+        
+
   {/* Heading - Visible and Centered */}
-  <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots">
+  <h1 className="text-white text-4xl md:text-6xl text-center mb-8 font-zenDots z-30">
     FORMULA BHARAT <span className="text-red-600">'</span>25
   </h1>
 
@@ -254,8 +261,8 @@ useEffect(() => {
 </div>
 
 
-
-    <div className="relative z-10 w-full px-4 py-8 md:py-12 lg:py-16 bg-gradient-to-b from-black via-red to-red-950">
+    <div className="  w-full px-4 py-8 md:py-12 lg:py-16 bg-gradient-to-b from-black via-red to-red-950">
+      
       <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-6 sm:mb-8 md:mb-12 text-center font-zenDots">
         SAE Supra<span className="ml-3 text-red-700">'</span>24
       </h2>
@@ -291,17 +298,17 @@ useEffect(() => {
       <div id="media" className="min-h-screen sm:h-screen bg-gradient-to-b from-red-950 via-red-1000 to-black text-white overflow-scroll scroll-smooth">
         <div className="text-4xl sm:text-7xl font-zenDots flex pt-3 sm:pt-9 pb-9 justify-center">Media Coverage</div>
 
-        <div className="flex md:flex-row flex-col items-center justify-center">
+        <div className="flex md:flex-row flex-col items-center justify-center ">
           <div className="p-2 md:p-8">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/VCa9h0X5KDc?si=4YzUt2p1vywAYzYp" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] w-[300px] md:h-[330px] md:w-[550px]" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen loading="lazy"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VCa9h0X5KDc?si=4YzUt2p1vywAYzYp" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] w-[300px] relative  md:h-[330px] md:w-[550px]" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen loading="lazy"></iframe>
           </div>
           <div className="md:p-8 p-2">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/SLfs0he6we0?si=gKjCbQiQiC0f9rqV" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] w-[300px] md:h-[330px] md:w-[550px]" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen loading="lazy"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SLfs0he6we0?si=gKjCbQiQiC0f9rqV" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] relative w-[300px] md:h-[330px] md:w-[550px]" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen loading="lazy"></iframe>
           </div>
         </div>
         <div>
           <div className="p-2 md:p-8 flex justify-center">
-            <iframe width="900" height="420" src="https://www.youtube.com/embed/N_NSTtLch1I?si=Sv5zWi2HkalrT1RR" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] w-[300px] md:h-[300px] md:w-[900px]" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen loading="lazy"></iframe>
+            <iframe width="900" height="420" src="https://www.youtube.com/embed/N_NSTtLch1I?si=Sv5zWi2HkalrT1RR" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className="h-[200px] relative w-[300px] md:h-[300px] md:w-[900px]" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen loading="lazy"></iframe>
           </div>
         </div>
       </div>
@@ -309,8 +316,8 @@ useEffect(() => {
       <div className="min-h-screen w-full bg-gradient-to-b from-black to-red-700">
       
           <div className="z-50 h-40 text-5xl sm:text-6xl flex justify-center font-zenDots  pt-16 w-full  text-white pb-20">Articles</div>
-        <div className="z-50 h-auto md:h-auto w-full md:pl-20 md:pr-20 pl-2 pr-2 mb-20">
-        <div className="sm:flex flex-col md:flex-row space-x-10 justify-center hidden rounded-sm  h-[420px] items-center ">
+        <div className="z-50 h-auto md:h-auto w-full sm:pl-10 sm:pr-10 lg:pl-20 lg:pr-20 pl-2 pr-2 mb-20">
+        <div className="md:flex  md:flex-row space-x-10 justify-center hidden rounded-sm  h-[420px] items-center ">
         
 <div className="card group h-98 w-72 hover:scale-105 border-2 border-red-600 rounded-xl transition-transform duration-500 ease-in-out drop-shadow-2xl">
   <img src="/assets/tni1.png" className="card-img-top rounded-t-xl" alt="Fissure in Sandstone"/>
@@ -375,7 +382,7 @@ useEffect(() => {
 </div>
 
 </div>
-<div className="sm:hidden p-custom !py-[1px] flex space-x-4 bg-white  rounded-xl flex-nowrap card-container !overflow-scroll md:!overflow-hidden">
+<div className="md:hidden p-custom !py-[1px] flex space-x-4 bg-white  rounded-xl flex-nowrap card-container !overflow-scroll md:!overflow-hidden">
   <div className="card-wrap ">
   <div className="card group h-98 w-64 hover:scale-105  transition-transform duration-500 ease-in-out ">
   <img src="/assets/tni1.png" className="card-img-top rounded-t-xl" alt="Fissure in Sandstone"/>

@@ -1,10 +1,38 @@
+"use client"
 import Image from "next/image"
+import { useEffect,useRef } from "react";
+
 export default function Footer(){
   const logo = "https://ik.imagekit.io/r70knk9pu/logo1.png?updatedAt=1739006550479";
 
+  const scrollDivRef = useRef(null);
+  
+        useEffect(() => {
+          const scrollDiv = scrollDivRef.current;
+      
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  scrollDiv.classList.add("-translate-y-0", "opacity-100");
+                } else {
+                  scrollDiv.classList.remove("translate-y-0", "opacity-100");
+                }
+              });
+            },
+            { threshold: 0.3 } // Trigger when 10% of the div is visible
+          );
+      
+          observer.observe(scrollDiv);
+      
+          return () => {
+            if (scrollDiv) observer.unobserve(scrollDiv);
+          };
+        }, []);
+
     return(
       <div className=" bg-neutral-950  pr-2 pl-2 z-10 pt-5 border-t-2 " id='footer'>  
-  <footer className="flex sm:flex-row flex-col pt-3 space-x-2 sm:space-x-9 sm:pt-3  pb-0 text-slate-50 space-y-6">
+  <footer ref={scrollDivRef} className="flex sm:flex-row flex-col pt-3 space-x-2 sm:space-x-9 sm:pt-3  pb-0 text-slate-50 space-y-6 opacity-0 transform  transition-all duration-500">
     <div className="sm:flex flex-col text-sm  sm:w-1/6 justify-center items-center border-r-2 ">
       <img src={logo} width={20} height={20} alt="yeti logo" className="h-20 w-32 sm:h-24 sm:w-44 xl:h-32 xl:w-52"/>
       <div className='font-zenDots text-xl pt-2'><span className='text-red-600'>Y</span>eti Racing </div>
