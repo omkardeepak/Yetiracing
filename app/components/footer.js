@@ -93,7 +93,7 @@ export default function Footer(){
 </img>
 </a>
     </div>
-    <div className="text-white text-center pb-2 font-Goldman justify-center flex "><span className='text-red-600'>Y</span>eti Racing</div>
+    <div className="text-white text-center pb-2 font-Goldman justify-center flex h-10 items-centerg "><span className="font-mono text-sm text-neutral-400 underline" >Made by <a href="https://www.linkedin.com/in/anjali-georance-61b017275/">ANJALI</a> & <a href="https://www.linkedin.com/in/omkar-deepak-623a55293/">OMKAR</a></span></div>
     </div>
 
     )

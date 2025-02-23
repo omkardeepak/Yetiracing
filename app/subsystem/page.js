@@ -70,9 +70,8 @@ const [yearisVisible, yearsetIsVisible] = useState(false);
         
         <div className="min-h-screen w-full bg-gradient-to-b from-black to-red-700 pt-20 z-0 ">
         <div className="-mt-32 z-0 flex items-start fixed inset-0 h-full w-full" >
-        {/* <AnimatedGrid className="custom-class-for-grid " /> */}
         <div
-  className=" z-0 mt-14 fixed inset-0 h-full w-full  bg-[radial-gradient(#d3d3d3_1px,transparent_1px)] [background-size:36px_36px] [mask-image:radial-gradient(50%_50%_at_50%_50%,#000_15%,transparent_100%)]"
+  className=" z-0 mt-14 fixed inset-0 h-full w-full  bg-[radial-gradient(#d3d3d3_1px,transparent_1px)] [background-size:46px_46px] [mask-image:radial-gradient(50%_50%_at_50%_50%,#000_15%,transparent_100%)]"
 ></div>
         </div>
         <div ref={divRef} className={`transition-transform duration-1000 ease-in-out transform ${
