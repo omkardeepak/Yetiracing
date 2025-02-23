@@ -17,16 +17,16 @@ export const metadata = {
   title: "Yeti Racing",
   description: "Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT).",
   icons: {
-    icon: "/assets/logo1.png", // Path to favicon/logo
+    icon: "/assets/logo2.webp", // Path to favicon/logo
   },
   openGraph: {
     title: "Yeti Racing",
-    description: "Join the Yeti Racing team for an exciting adventure in racing!",
+    description: "Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT).",
     url: "https://yetiracing.cusat.co.in/",
     siteName: "Yeti Racing",
     images: [
       {
-        url: "https://yetiracing.cusat.co.in/assets/logo1.png", // Ensure this image is accessible
+        url: "https://yetiracing.cusat.co.in/assets/logo2.webp", // Ensure this image is accessible
         width: 1200,
         height: 630,
         alt: "Yeti Racing Logo",
@@ -38,7 +38,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Yeti Racing",
     description: "Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT).",
-    images: ["https://yetiracing.cusat.co.in/assets/logo1.png"], // Twitter preview image
+    images: ["https://yetiracing.cusat.co.in/assets/logo2.webp"], // Twitter preview image
   },
 };
 
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         {/* Favicon */}
-        <link rel="icon" href="/assets/logo1.png" />
+        <link rel="icon" href="/assets/logo2.webp" />
 
         {/* Meta Title & Description */}
         <title>{metadata.title}</title>
