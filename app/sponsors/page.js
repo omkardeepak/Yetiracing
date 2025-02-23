@@ -7,7 +7,6 @@ import Footer from '../components/footer';
 import AnimatedGrid from '../components/grid';
 
 export default function SponsorsPage() {
-
   
   const [visibleSections, setVisibleSections] = useState({
     santaMonica: false,
@@ -68,7 +67,7 @@ export default function SponsorsPage() {
               <span className="text-white font-bold font-zenDots">SPONSORS</span>
             </h1>
             
-            <div className="max-w-4xl mx-auto text-base sm:text-lg lg:text-2xl text-center mb-8 sm:mb-12 md:mb-16 ">
+            <div className="max-w-4xl mx-auto text-base sm:text-lg lg:text-2xl text-center mb-8 sm:mb-12 md:mb-16">
               <p className="mb-4 sm:mb-8 text-gray-300 text-justify font-Rajdhani px-4">
                 Yeti Racing is dedicated to pushing the limits of student innovation each year. As a non-profit student team, we deeply appreciate the invaluable support from generous companies and institutions.
               </p>
@@ -78,17 +77,18 @@ export default function SponsorsPage() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-12 sm:mb-16 md:mb-20 font-Goldman px-4">
-              <a href='/funding'>
-                <button className="bg-transparent border-2 border-green-500 text-white px-6 sm:px-10 py-2 sm:py-3 rounded-full text-sm sm:text-lg transition-all duration-300 hover:scale-105 hover:bg-green-500/7 hover:border-green-400 hover:shadow-[0_0_10px_5px_rgba(34,197,94,0.5)]">
-                  Back Our Team
-                </button>
-              </a>
-              <a href='#footer'>
-                <button className="bg-transparent border-2 border-green-500 text-white px-6 sm:px-10 py-2 sm:py-3 rounded-full text-sm sm:text-lg transition-all duration-300 hover:scale-105 hover:bg-green-500/7 hover:border-green-400 hover:shadow-[0_0_10px_5px_rgba(34,197,94,0.5)]">
-                  Sponsorship
-                </button>
-              </a>
-            </div>
+  <a href='/funding'>
+    <button className="bg-transparent border-2 border-green-500 text-white px-6 sm:px-10 py-2 sm:py-3 rounded-full text-sm sm:text-lg transition-transform transition-colors transition-shadow duration-300 hover:scale-105 hover:bg-green-500/7 hover:border-green-400 hover:shadow-[0_0_10px_5px_rgba(34,197,94,0.5)]">
+      Back Our Team
+    </button>
+  </a>
+  <a href='#footer'>
+    <button className="bg-transparent border-2 border-green-500 text-white px-6 sm:px-10 py-2 sm:py-3 rounded-full text-sm sm:text-lg transition-transform transition-colors transition-shadow duration-300 hover:scale-105 hover:bg-green-500/7 hover:border-green-400 hover:shadow-[0_0_10px_5px_rgba(34,197,94,0.5)]">
+      Sponsorship
+    </button>
+  </a>
+</div>
+
 
             {/* Sponsor Section Component */}
             {[
