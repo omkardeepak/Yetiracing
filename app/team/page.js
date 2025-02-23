@@ -23,7 +23,7 @@ export default function TeamPage() {
           }
         });
       },
-      { threshold: 0.7 } // Adjust the threshold as needed
+      { threshold: 0.3} // Adjust the threshold as needed
     );
 
     if (divRef.current) {
@@ -114,7 +114,10 @@ export default function TeamPage() {
       
       <Navbar />
       <div className="-mt-32 z-0 flex items-start fixed inset-0 h-full w-full" >
-        <AnimatedGrid className="custom-class-for-grid " />
+        {/* <AnimatedGrid className="custom-class-for-grid " /> */}
+        <div
+  className=" z-0 mt-14 fixed inset-0 h-full w-full  bg-[radial-gradient(#d3d3d3_1px,transparent_1px)] [background-size:36px_36px] [mask-image:radial-gradient(50%_50%_at_50%_50%,#000_15%,transparent_100%)]"
+></div>
         </div>
       <div className="min-h-screen bg-gradient-to-b from-red-900 via-neutral-950 to-neutral-950 pb-9 pt-28">
         <div className={`max-w-[1400px] mx-auto px-4 md:px-8 pt-16 transition-opacity duration-1000 ease-in-out ${
@@ -132,7 +135,7 @@ export default function TeamPage() {
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >            <div className="col-span-12 md:col-start-2 md:col-span-10 mb-8 md:mb-20">
-              <p className="text-gray-300 md:text-2xl text-lg text-justify font-Rajdhani mb-10">
+              <p className="p-7 sm:p-0 text-gray-300 md:text-2xl text-lg text-justify font-Rajdhani mb-10">
               Founded in 2016, Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT). Comprising 50 passionate and skilled members, we are driven by a shared commitment to engineering excellence and innovation. Our team designs and builds high-performance race cars to compete in prestigious motorsport events such as <span className='font-semibold'>FORMULA BHARAT, SAE SUPRA, FORMULA IMPERIAL and FFS INDIA.</span><br></br><br></br>
                  At Formula Bharat 2025, held at Kari Motor Speedway, Coimbatore, Yeti Racing made history by becoming the first team from Kerala to win the championship title in the combustion category - a landmark achievement that underscores our dedication, technical expertise, and perseverance. The team secured overall rank 1 in endurance, efficiency, and dynamics.  
               </p> 
@@ -143,7 +146,7 @@ export default function TeamPage() {
                   <p className="text-gray-300 md:text-2xl font-Rajdhani text-justify mb-10">
                    
                   </p>
-                  <div id='achievements' className="flex text-xs md:text-xl flex-col md:flex-row w-full gap-4 justify-center">
+                  <div  id='achievements' className="flex text-xs md:text-xl flex-col md:flex-row w-full gap-4 justify-center">
                   <a 
                     href="https://www.suprasaeindia.org/" 
                     target="_blank" 
@@ -179,11 +182,11 @@ export default function TeamPage() {
             </div>
 
             <div  ref={divRef} className="col-span-full grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 mb-14">
-              <div       ref={confettiRef} className={`col-span-12 md:col-span-5 transition-transform duration-1000 ease-in-out transform ${
-        yearisVisible ? 'translate-y-0 opacity-100' : 'translate-y-32 opacity-0'
+              <div        className={`col-span-12 md:col-span-5 transition-transform duration-1000 ease-in-out transform ${
+        yearisVisible ? ' md:translate-y-0 md:opacity-100 ' : 'md:translate-y-72 md:opacity-0 '
       }`}>
                 {/* Two-column grid for mobile, three-column for desktop */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 gap-y-10 ">
+                <div ref={confettiRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 gap-y-10 ">
                   {achievements.map((achievement) => (
                     <Badge key={achievement.id} achievement={achievement} />
                   ))}

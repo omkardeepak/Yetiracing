@@ -56,11 +56,14 @@ export default function SponsorsPage() {
         {/* First Screen - Black to Dark Red Gradient */}
         <div className="bg-gradient-to-b from-black to-red-900 z-0">
         <div className="-mt-32 z-0 flex items-start fixed inset-0 h-full w-full" >
-        <AnimatedGrid className="custom-class-for-grid " />
+        {/* <AnimatedGrid className="custom-class-for-grid " /> */}
         </div>
-        {/* <div
-  className=" z-0 mt-14 fixed inset-0 h-full w-full  bg-[radial-gradient(#d3d3d3_1px,transparent_1px)] [background-size:36px_36px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_5%,transparent_90%)]"
-></div> */}
+        <div
+  className=" z-0 mt-14 fixed inset-0 h-full w-full  bg-[radial-gradient(#d3d3d3_1px,transparent_1px)] [background-size:46px_46px] [mask-image:radial-gradient(50%_50%_at_50%_50%,#000_15%,transparent_100%)]"
+></div>
+
+
+
           <div className=" z-50 max-w-[90%] 2xl:max-w-[1400px] mx-auto px-4 py-8 sm:py-12 md:py-16">
             <h1 className="text-center mb-8 sm:mb-12 animate-bounce text-3xl sm:text-4xl lg:text-6xl flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
               <span className="text-red-600 font-bold font-zenDots">OUR</span>

@@ -84,6 +84,9 @@ const VideoGallery = () => {
 
   return (
     <div className="relative w-screen h-[50vh] md:h-screen bg-gradient-to-b from-black via-red to-red-950 flex items-center justify-center overflow-hidden pt-10 md:pt-52 pr-3">
+ <div
+  className=" z-0 mt-14 fixed inset-0 h-full w-full  bg-[radial-gradient(#d3d3d3_1px,transparent_1px)] [background-size:46px_46px] [mask-image:radial-gradient(50%_50%_at_50%_50%,#000_15%,transparent_100%)]"
+></div>
       <div className="relative">
         {/* SVG mask for the full GALLERY text */}
         <svg className="absolute inset-0 w-full h-full">
@@ -168,8 +171,10 @@ useEffect(() => {
  
   return (
     <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500  `}>
-              <AnimatedGrid className="custom-class-for-grid fixed inset-0 h-full w-full z-0" />
-              
+              {/* <AnimatedGrid className="custom-class-for-grid fixed inset-0 h-full w-full z-0" /> */}
+              <div
+  className=" z-0 mt-14 fixed inset-0 h-full w-full  bg-[radial-gradient(#d3d3d3_1px,transparent_1px)] [background-size:46px_46px] [mask-image:radial-gradient(50%_50%_at_50%_50%,#000_15%,transparent_100%)]"
+></div>
               <Navbar  className="relative z-20" />
               <VideoGallery  className="relative z-20"  />
 
@@ -363,7 +368,7 @@ useEffect(() => {
   </div>
   </div>
 </div>
-<div className="card group h-98 w-72 hover:scale-105 border-2 border-red-600 rounded-xl  transition-transform duration-500 ease-in-out drop-shadow-2xl">
+<div className="card group h-98 w-72 hover:scale-105 border-2 z-50 border-red-600 rounded-xl  transition-transform duration-500 ease-in-out drop-shadow-2xl">
   <img src="/assets/mat.jpg" className="card-img-top rounded-t-xl" alt="Fissure in Sandstone"/>
   <div className="card-body bg-neutral-100 h-40 rounded-b-xl p-2">
     <p className="font-Rajdhani mb-1 font-medium text-justify"><span className="font-bold font-Rajdhani"> Mathrubhumi :</span> <span className="font-light">അന്താരാഷ്ട്ര ഫോർമുല ഭാരത് മത്സരം കുസാറ്റിന് കിരീടം<span className="font-medium">......</span></span></p>
@@ -380,8 +385,8 @@ useEffect(() => {
 </div>
 
 </div>
-<div className="md:hidden p-custom !py-[1px] flex space-x-4 bg-white  rounded-xl flex-nowrap card-container !overflow-scroll md:!overflow-hidden">
-  <div className="card-wrap ">
+<div className="md:hidden p-custom  overflow-x-auto !py-[1px] flex space-x-4 bg-white  rounded-xl flex-nowrap card-container !overflow-scroll md:!overflow-hidden">
+  <div className="card-wrap z-30">
   <div className="card group h-98 w-64 hover:scale-105  transition-transform duration-500 ease-in-out ">
   <img src="/assets/tni1.png" className="card-img-top rounded-t-xl" alt="Fissure in Sandstone"/>
   <div className="card-body bg-neutral-100 h-40 p-2">
@@ -399,7 +404,7 @@ useEffect(() => {
   </div>
 </div>
   </div>
-  <div className="card-wrap">
+  <div className="card-wrap z-30">
 
   <div className="card group h-98 w-64 hover:scale-105  transition-transform duration-500 ease-in-out">
   <img src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20250130034012_Yeti_Racing_Formula_Bharat.jpg&w=700&c=1" className="card-img-top rounded-t-xl" alt="Fissure in Sandstone"/>
@@ -417,7 +422,7 @@ useEffect(() => {
   </div>
 </div>
   </div>
-  <div className="card-wrap">
+  <div className="card-wrap z-30">
 
   <div className="card group h-98 w-64 hover:scale-105  transition-transform duration-500 ease-in-out">
   <img src="/assets/hindu.jpg" className="rounded-t-xl card-img-top" alt="Fissure in Sandstone"/>
@@ -435,7 +440,7 @@ useEffect(() => {
   </div>
 </div>
   </div>
-  <div className="card-wrap">
+  <div className="card-wrap z-30">
 
   <div className="card group h-98 w-64 hover:scale-105  transition-transform duration-500 ease-in-out">
   <img src="/assets/mat.jpg" className="card-img-top rounded-t-xl" alt="Fissure in Sandstone"/>
@@ -464,7 +469,7 @@ useEffect(() => {
         {[...images2, ...images2].map((src, index) => (
           <div 
             key={index} 
-            className="flex-shrink-0 mx-2 w-[300px] h-[200px] flex justify-center items-center "
+            className="flex-shrink-0 mx-2 w-[300px] h-[200px] flex justify-center items-center z-30"
           >
             <Image 
               src={src} 
