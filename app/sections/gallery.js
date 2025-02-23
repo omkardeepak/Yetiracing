@@ -52,9 +52,12 @@ export default function Crowdfund(){
         <div ref={progressRef} className=" text-white flex sm:flex-col flex-row h-screen bg-gradient-to-b from-black to-red-700 ">
            {/* <div className="z-0 mt-5 relative inset-0 h-screen w-full bg-[radial-gradient(rgba(211,211,211,0.5)_1px,transparent_1px)] [background-size:36px_36px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]">
 </div> */}
- <div className=" z-0 flex relative items-start fixed inset-0 h-screen w-full" >
+ {/* <div className=" z-0 flex relative items-start fixed inset-0 h-screen w-full" >
         <AnimatedGrid className="custom-class-for-grid " />
-        </div>
+        </div> */}
+          <div
+  className=" z-0 mt-14   h-screen w-full  bg-[radial-gradient(#d3d3d3_1px,transparent_1px)] [background-size:46px_46px] [mask-image:radial-gradient(50%_50%_at_50%_50%,#000_15%,transparent_100%)]"
+></div>
 
            {/* <img src={abstract} alt="abs" className='absolute flex z-0 h-full w-full pb-10'/> */}
             <div className="z-10 flex absolute flex-col p-4 sm:w-1/2 w-full h-screen left-0 justify-center items-center ">
