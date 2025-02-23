@@ -136,30 +136,32 @@ const Gallery = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setFlipped(prev => !prev);
-    }, 5000); // Flip every 3 seconds
+    }, 3000); // Flip every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
   
+  const speed = 10; // Adjust this value to control speed
   const sliderRef = useRef(null);
 
-  useEffect(() => {
-    const slider = sliderRef.current;
-    let animationFrame;
+useEffect(() => {
+  const slider = sliderRef.current;
+  let animationFrame;
 
-    const scroll = () => {
-      if (slider) {
-        slider.scrollLeft += 8;
-        if (slider.scrollLeft >= slider.scrollWidth / 2) {
-          slider.scrollLeft = 0;
-        }
+  const scroll = () => {
+    if (slider) {
+      slider.scrollLeft += speed; // Adjust speed dynamically
+      if (slider.scrollLeft >= slider.scrollWidth / 2) {
+        slider.scrollLeft = 0;
       }
-      animationFrame = requestAnimationFrame(scroll);
-    };
-
+    }
     animationFrame = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(animationFrame);
-  }, []);
+  };
+
+  animationFrame = requestAnimationFrame(scroll);
+  return () => cancelAnimationFrame(animationFrame);
+}, []);
+
 
 
 
