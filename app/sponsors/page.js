@@ -91,7 +91,7 @@ export default function SponsorsPage() {
                 direction: "right",
                 title: "Santa Monica",
                 description: "Santa Monica Study Abroad, founded in 2002, is a leading educational consultancy that helps students pursue higher education opportunities overseas. With over two decades of experience, they provide expert guidance on university selection, visa processes, and scholarship options, making the study abroad journey smooth and hassle-free.",
-                logo: "/assets/santa-monica-logo.png",
+                logo: "/assets/santa.png",
                 link: "https://santamonicaedu.in/"
               },
               {
@@ -99,7 +99,7 @@ export default function SponsorsPage() {
                 direction: "left",
                 title: "DTS Racing",
                 description: "DTS Racing, founded in 2015 by National and International Champion Dilljith T S, is a prominent motorsports team in India dedicated to promoting motorsports among the younger generation. As part of DTSR Academy Pvt Ltd, the team has quickly risen to become one of India's top national and international racing teams.",
-                logo: "/assets/dts-racing-logo.png",
+                logo: "/assets/dts.jpg",
                 link: "https://dtsracing.com/"
               },
               {
