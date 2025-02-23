@@ -168,13 +168,10 @@ useEffect(() => {
  
   return (
     <div className={`flex flex-col min-h-screen bg-black transition-opacity duration-500  `}>
-              <div className=" z-0 flex items-start fixed inset-0 h-full w-full" >
+              <AnimatedGrid className="custom-class-for-grid fixed inset-0 h-full w-full z-[1]" />
+<Navbar />
+<VideoGallery />
 
-            <AnimatedGrid className="custom-class-for-grid h-full absolute " />
-            </div>
-
-      <Navbar />
-      <VideoGallery className="" />
 
       <div className="w-full min-h-screen p-8 bg-gradient-to-b from-red-950 via-red-900 to-black flex flex-col items-center">
         
