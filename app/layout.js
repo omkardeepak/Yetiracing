@@ -12,11 +12,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Define metadata
 export const metadata = {
   title: "Yeti Racing",
-  description: "",
+  description: "Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT).",
   icons: {
-    icon: '/assets/logo1.png', // Path to your logo
+    icon: "/assets/logo1.png", // Path to favicon/logo
+  },
+  openGraph: {
+    title: "Yeti Racing",
+    description: "Join the Yeti Racing team for an exciting adventure in racing!",
+    url: "https://yetiracing.cusat.co.in/",
+    siteName: "Yeti Racing",
+    images: [
+      {
+        url: "https://yetiracing.cusat.co.in/assets/logo1.png", // Ensure this image is accessible
+        width: 1200,
+        height: 630,
+        alt: "Yeti Racing Logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yeti Racing",
+    description: "Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT).",
+    images: ["https://yetiracing.cusat.co.in/assets/logo1.png"], // Twitter preview image
   },
 };
 
@@ -24,13 +46,28 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/assets/logo1.png" /> {/* Add favicon link */}
-        <meta name="description" content={metadata.description} />
+        {/* Favicon */}
+        <link rel="icon" href="/assets/logo1.png" />
+
+        {/* Meta Title & Description */}
         <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+
+        {/* Open Graph Meta Tags for Social Sharing */}
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta property="og:description" content={metadata.openGraph.description} />
+        <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:type" content={metadata.openGraph.type} />
+        <meta property="og:site_name" content={metadata.openGraph.siteName} />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metadata.twitter.title} />
+        <meta name="twitter:description" content={metadata.twitter.description} />
+        <meta name="twitter:image" content={metadata.twitter.images[0]} />
       </Head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
