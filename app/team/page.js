@@ -5,7 +5,7 @@ import Footer from '../components/footer';
 import { useEffect, useRef , useState } from 'react';
 import confetti from 'canvas-confetti';
 import AnimatedGrid from '../components/grid';
-
+import Link from "next/link";
 export default function TeamPage() {
   const confettiRef = useRef(null);
 
@@ -146,39 +146,26 @@ export default function TeamPage() {
                   <p className="text-gray-300 md:text-2xl font-Rajdhani text-justify mb-10">
                    
                   </p>
-                  <div  id='achievements' className="flex text-xs md:text-xl flex-col md:flex-row w-full gap-4 justify-center">
-                  <a 
-                    href="https://www.suprasaeindia.org/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex-1"
-                  >
-                    <button className="w-full bg-transparent border-2 border-green-500 text-white px-8 py-3 rounded-full transition-all duration-300 font-Goldman hover:scale-105 hover:bg-green-500/7 hover:border-green-400 hover:shadow-[0_0_10px_5px_rgba(34,197,94,0.5)]">
-                      SAE SUPRA
-                    </button>
-                  </a>
-                  
-                  <a 
-                    href="https://www.formulabharat.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex-1"
-                  >
-                    <button className="w-full bg-transparent border-2 border-green-500 text-white px-8 py-3 rounded-full transition-all duration-300 font-Goldman hover:scale-105 hover:bg-green-500/7 hover:border-green-400 hover:shadow-[0_0_10px_5px_rgba(34,197,94,0.5)]">
-                      FORMULA BHARAT
-                    </button>
-                  </a>
-                  <a 
-                    href="https://www.fmae.in/fmaeffsindia/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex-1"
-                  >
-                    <button className="w-full bg-transparent border-2 border-green-500 text-white px-8 py-3 rounded-full transition-all duration-300 font-Goldman hover:scale-105 hover:bg-green-500/7 hover:border-green-400 hover:shadow-[0_0_10px_5px_rgba(34,197,94,0.5)]">
-                      FFS INDIA
-                    </button>
-                  </a>
-                </div>
+                  import Link from "next/link";
+
+
+    <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 p-4 w-full">
+      <Link href="https://www.suprasaeindia.org/">
+        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2 border-transparent bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+          SAE Supra
+        </button>
+      </Link>
+      <Link href="https://www.formulabharat.com/">
+        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2 border-transparent bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+          Formula Bharat
+        </button>
+      </Link>
+      <Link href="https://www.fmae.in/fmaeffsindia/">
+        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2 border-transparent bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+          FFS India
+        </button>
+      </Link>
+    </div>
             </div>
 
             <div  ref={divRef} className="col-span-full grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 mb-14">

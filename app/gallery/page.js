@@ -299,7 +299,10 @@ useEffect(() => {
 
       
       <div id="media" className="min-h-screen sm:h-screen bg-gradient-to-b from-red-950 via-red-1000 to-black text-white overflow-scroll scroll-smooth">
-        <div className="text-4xl sm:text-7xl font-zenDots flex pt-3 sm:pt-9 pb-9 justify-center">Media Coverage</div>
+      <div className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-zenDots flex pt-3 sm:pt-6 md:pt-9 pb-6 md:pb-9 justify-center text-center">
+  Media Coverage
+</div>
+
 
         <div className="flex md:flex-row flex-col items-center justify-center ">
           <div className="p-2 md:p-8">
