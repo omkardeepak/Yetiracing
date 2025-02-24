@@ -42,7 +42,7 @@ const [yearisVisible, yearsetIsVisible] = useState(false);
     { name: "Saif Ali K N", role: "Rollcage", img:"https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-19%20at%2020.47.25_98d6b650.jpg?updatedAt=1740051654412",linkedin:"https://www.linkedin.com/in/saif-ali-a24740244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { name: "Aswin A", role: "Suspension" , img:"https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-19%20at%2020.47.26_ae756ec9.jpg?updatedAt=1740051654950",linkedin:"https://www.linkedin.com/in/aswin-a-3a87a7247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
     { name: "Govind E S", role: "Brake" , img:"https://ik.imagekit.io/r70knk9pu/WhatsApp%20Image%202025-02-19%20at%2020.47.25_9472a724.jpg?updatedAt=1740051654881",linkedin:""},
-    { name: "Lena Alingal", role: "Statics", img:"https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png",linkedin:"https://www.linkedin.com/in/lena-alingal-788751229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " },
+    { name: "Lena Alingal", role: "Statics", img:"assets/lena.webp",linkedin:"https://www.linkedin.com/in/lena-alingal-788751229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " },
     { name: "Vishnu M Krishnan", role: "Media", img:"https://ik.imagekit.io/r70knk9pu/vishnu.jpg?updatedAt=1739005570487",linkedin:"https://www.linkedin.com/in/vishnumkrishnan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
   ];
 

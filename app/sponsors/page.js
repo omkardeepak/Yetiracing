@@ -79,18 +79,26 @@ export default function SponsorsPage() {
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-12 sm:mb-16 md:mb-20 font-Goldman px-4">
-  <a href='/funding'>
-    <button className="bg-transparent border-2 border-green-500 text-white px-6 sm:px-10 py-2 sm:py-3 rounded-full text-sm sm:text-lg transition-transform transition-colors transition-shadow duration-300 hover:scale-105 hover:bg-green-500/7 hover:border-green-400 hover:shadow-[0_0_10px_5px_rgba(34,197,94,0.5)]">
-      Back Our Team
-    </button>
-  </a>
-  <a href='#footer'>
-    <button className="bg-transparent border-2 border-green-500 text-white px-6 sm:px-10 py-2 sm:py-3 rounded-full text-sm sm:text-lg transition-transform transition-colors transition-shadow duration-300 hover:scale-105 hover:bg-green-500/7 hover:border-green-400 hover:shadow-[0_0_10px_5px_rgba(34,197,94,0.5)]">
-      Sponsorship
-    </button>
-  </a>
-</div>
+            
+
+            
+            <div className="flex justify-center items-center space-x-4 p-4">
+      <Link href="/funding">
+        <button className="relative px-8 py-3 w-52 h-14 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_15px_rgba(34,197,94,0.7)]">
+          Back Our Team
+        </button>
+      </Link>
+      <Link href="#footer">
+        <button className="relative px-8 py-3 w-52 h-14 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_15px_rgba(34,197,94,0.7)]">
+          Sponsorship
+        </button>
+      </Link>
+    </div>
+
+
+    
+   
+
 
 
             {/* Sponsor Section Component */}
