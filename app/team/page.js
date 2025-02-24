@@ -135,11 +135,11 @@ export default function TeamPage() {
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >            <div className="col-span-12 md:col-start-2 md:col-span-10 mb-8 md:mb-20">
-              <p className="p-7 sm:p-0 text-gray-300 md:text-2xl text-lg text-justify font-Rajdhani mb-10">
+              <p className="p-7 sm:p-0 text-gray-300 md:text-2xl text-lg text-justify font-Rajdhani sm:mb-10 ">
               Founded in 2016, Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT). Comprising 50 passionate and skilled members, we are driven by a shared commitment to engineering excellence and innovation. Our team designs and builds high-performance race cars to compete in prestigious motorsport events such as <span className='font-semibold'>FORMULA BHARAT, SAE SUPRA, FORMULA IMPERIAL and FFS INDIA.</span><br></br><br></br>
                  At Formula Bharat 2025, held at Kari Motor Speedway, Coimbatore, Yeti Racing made history by becoming the first team from Kerala to win the championship title in the combustion category - a landmark achievement that underscores our dedication, technical expertise, and perseverance. The team secured overall rank 1 in endurance, efficiency, and dynamics.  
               </p> 
-              <p className="text-gray-300 md:text-2xl font-Rajdhani text-justify">
+              <p className="text-gray-300 md:text-2xl text-lg  p-7 sm:p-0 font-Rajdhani text-justify ">
                     Looking ahead, Yeti Racing is gearing up for exciting challenges at Formula Imperial
                     2025 and Formula Bharat 2026 with aspirations to push the boundaries of design and performance even further.
                   </p> <br></br>
@@ -151,17 +151,17 @@ export default function TeamPage() {
 
     <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 p-4 w-full">
       <Link href="https://www.suprasaeindia.org/">
-        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+        <button className="relative px-12 py-4 w-80 h-16 text-white font-Orbitron text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
           SAE Supra
         </button>
       </Link>
       <Link href="https://www.formulabharat.com/">
-        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-Orbitron font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
           Formula Bharat
         </button>
       </Link>
       <Link href="https://www.fmae.in/fmaeffsindia/">
-        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-Orbitron font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
           FFS India
         </button>
       </Link>
