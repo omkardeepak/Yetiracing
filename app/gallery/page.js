@@ -154,7 +154,7 @@ useEffect(() => {
   const scroll = () => {
     if (slider) {
       slider.scrollLeft += speed; // Adjust speed dynamically
-      if (slider.scrollLeft >= slider.scrollWidth / 2) {
+      if (slider.scrollLeft >= slider.scrollWidth ) {
         slider.scrollLeft = 0;
       }
     }
