@@ -84,12 +84,12 @@ export default function SponsorsPage() {
             
             <div className="flex justify-center items-center space-x-4 p-4">
       <Link href="/funding">
-        <button className="relative px-8 py-3 w-52 h-14 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2 border-transparent bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_15px_rgba(34,197,94,0.7)]">
+        <button className="relative px-8 py-3 w-52 h-14 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_15px_rgba(34,197,94,0.7)]">
           Back Our Team
         </button>
       </Link>
       <Link href="#footer">
-        <button className="relative px-8 py-3 w-52 h-14 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2 border-transparent bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_15px_rgba(34,197,94,0.7)]">
+        <button className="relative px-8 py-3 w-52 h-14 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_15px_rgba(34,197,94,0.7)]">
           Sponsorship
         </button>
       </Link>

@@ -146,27 +146,29 @@ export default function TeamPage() {
                   <p className="text-gray-300 md:text-2xl font-Rajdhani text-justify mb-10">
                    
                   </p>
-                  import Link from "next/link";
+                  
 
 
     <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 p-4 w-full">
       <Link href="https://www.suprasaeindia.org/">
-        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2 border-transparent bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
           SAE Supra
         </button>
       </Link>
       <Link href="https://www.formulabharat.com/">
-        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2 border-transparent bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
           Formula Bharat
         </button>
       </Link>
       <Link href="https://www.fmae.in/fmaeffsindia/">
-        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2 border-transparent bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
+        <button className="relative px-12 py-4 w-80 h-16 text-white text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
           FFS India
         </button>
       </Link>
     </div>
             </div>
+
+
 
             <div  ref={divRef} className="col-span-full grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 mb-14">
               <div        className={`col-span-12 md:col-span-5 transition-transform duration-1000 ease-in-out transform ${
