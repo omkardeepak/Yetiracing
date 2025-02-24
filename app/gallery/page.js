@@ -147,26 +147,47 @@ const Gallery = () => {
   const speed = 10; // Adjust this value to control speed
   const sliderRef = useRef(null);
 
-useEffect(() => {
-  const slider = sliderRef.current;
-  let animationFrame;
-
-  const scroll = () => {
-    if (slider) {
-      slider.scrollLeft += speed; // Adjust speed dynamically
-      if (slider.scrollLeft >= slider.scrollWidth ) {
-        slider.scrollLeft = 0;
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider || !slider.children.length) return;
+    
+    // Clone the items to create the infinite effect
+    const items = Array.from(slider.children);
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      slider.appendChild(clone);
+    });
+    
+    let animationFrame;
+    
+    const scroll = () => {
+      if (slider) {
+        // Continue scrolling
+        slider.scrollLeft += speed;
+        
+        // Calculate the width of the original content
+        const firstItemsWidth = items.reduce(
+          (width, item) => width + item.offsetWidth, 0
+        );
+        
+        // When we've scrolled past the first set of items, 
+        // jump back to start without being noticeable
+        if (slider.scrollLeft >= firstItemsWidth) {
+          // This creates the seamless loop effect
+          slider.scrollLeft = 0;
+        }
       }
-    }
+      
+      // Continue the animation loop indefinitely
+      animationFrame = requestAnimationFrame(scroll);
+    };
+    
+    // Start the animation
     animationFrame = requestAnimationFrame(scroll);
-  };
-
-  animationFrame = requestAnimationFrame(scroll);
-  return () => cancelAnimationFrame(animationFrame);
-}, []);
-
-
-
+    
+    // Clean up
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
 
  
   return (
