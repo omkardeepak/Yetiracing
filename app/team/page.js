@@ -149,7 +149,9 @@ export default function TeamPage() {
                   
 
 
-    <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 p-4 w-full">
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap md:flex-wrap justify-center items-center gap-4 sm:gap-5 md:gap-6 p-4 w-full max-w-screen-xl mx-auto">
+
+
       <Link href="https://www.suprasaeindia.org/">
         <button className="relative px-12 py-4 w-80 h-16 text-white font-Orbitron text-lg font-semibold rounded-full transition-transform duration-300 ease-in-out border-2  bg-transparent border-green-400 flex justify-center items-center hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)]">
           SAE Supra
