@@ -21,9 +21,10 @@ export const metadata = {
   },
   openGraph: {
     title: "Yeti Racing",
+    siteName: "Yeti Racing",
     description: "Yeti Racing is the official Formula Student team of the School of Engineering at Cochin University of Science and Technology (CUSAT).",
     url: "https://yetiracing.cusat.co.in/",
-    siteName: "Yeti Racing",
+    
     images: [
       {
         url: "https://yetiracing.cusat.co.in/assets/logo2.webp", // Ensure this image is accessible
@@ -47,10 +48,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         {/* Favicon */}
-        <link rel="icon" href="/assets/logo2.webp" />
+        <link rel="icon" href="/assets/favi.png" />
 
         {/* Meta Title & Description */}
-        <title>{metadata.title}</title>
+        <title>Yeti Racing</title>
+        <meta name="google-site-name" content="Yeti Racing"></meta>
         <meta name="description" content={metadata.description} />
 
         {/* Open Graph Meta Tags for Social Sharing */}
