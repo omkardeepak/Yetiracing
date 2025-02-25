@@ -47,7 +47,7 @@ export default function Footer(){
       <ul className="">
         <li className="nav-item mb-2"><a href="/subsystem" className="nav-link p-0 text-body-secondary">Team</a></li>
         <li className="nav-item mb-2"><a href="/gallery" className="nav-link p-0 text-body-secondary">Gallery</a></li>
-        <li className="nav-item mb-2"><a href="/team" className="nav-link p-0 text-body-secondary"></a>About us</li>
+        <li className="nav-item mb-2"><a href="/team" className="nav-link p-0 text-body-secondary">About us</a></li>
         <li className="nav-item mb-2"><a href="/sponsors" className="nav-link p-0 text-body-secondary">Sponsors</a></li>
         <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Contact us</a></li>
       </ul>
@@ -59,14 +59,15 @@ export default function Footer(){
          Asif Ahammad H
         </li>
         <li className="flex space-x-2 sm:space-x-10">
-            +91 6238118843
+        <a href="tel:+916238118843">+91  6238118843</a>
         </li>
         <br></br>
         <li className="flex space-x-2 sm:space-x-10">
          Abhijith Mohan
         </li>
         <li className="flex space-x-2 sm:space-x-10">
-            +91 8547177020
+        <a href="tel:+918547177020">+91  8547177020</a>
+          
         </li>
       </ul>
     </div>
